@@ -1,0 +1,28 @@
+Completitud: 77.8% (7/9)
+- Faltan campos detectados: ubicacion, orientacion
+- Sugerencia LLM: Para capturar los campos de "ubicación" y "orientación" de la página de Zonaprop usando Selenium y BeautifulSoup, primero necesitas identificar cómo están estructurados esos elementos en el HTML. Dado que no has proporcionado el HTML completo, aquí te doy una guía general de cómo proceder.
+
+1. **Inspeccionar el HTML**: Abre la página en un navegador, haz clic derecho sobre el elemento que deseas capturar (ubicación y orientación) y selecciona "Inspeccionar". Esto te permitirá ver la estructura del HTML y los selectores que puedes usar.
+
+2. **Identificar Selectores**: Busca las etiquetas HTML que contienen la información de ubicación y orientación. Generalmente, estos datos pueden estar dentro de etiquetas `<div>`, `<span>`, o `<p>`. Toma nota de las clases o identificadores que puedas usar como selectores.
+
+3. **Uso de Selenium para Cargar la Página**: Asegúrate de que Selenium esté configurado para cargar la página antes de intentar extraer datos. Aquí hay un ejemplo básico de cómo usar Selenium para cargar la página:
+
+   ```python
+   from selenium import webdriver
+   from bs4 import BeautifulSoup
+   import time
+
+   # Configura el driver de Selenium
+   driver = webdriver.Chrome()  # Asegúrate de tener el chromedriver en tu PATH
+   driver.get('https://www.zonaprop.com.ar/propiedades/clasificado/alclocin-oficina-amoblada-ayacucho-al-400-58984383.html')
+
+   # Espera a que la página cargue completamente
+   time.sleep(5)  # Ajusta el tiempo según sea necesario
+
+   # Obtén el HTML de la página
+   html = driver.page_source
+   driver.quit()
+   ```
+
+4. **Uso de BeautifulSoup para Parsear el HTML**: Una vez que tengas el HTML, puedes usar BeautifulSoup para extraer

@@ -1,0 +1,25 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-zapata-al-500-3-ambientes-semiiso-palier-privado-57988210.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-zapata-al-500-3-ambientes-semiiso-palier-privado-57988210.html
+direccion: Zapata 561
+barrio: Colegiales
+tipo: Departamento
+operacion: Venta
+precio: USD 176.000
+expensas: $ 300.000
+piso: semipiso
+ambientes: 3
+metros_totales: 67
+metros_cubiertos: 60
+ubicacion: contrafrente
+orientacion: NE
+antiguedad: 20 anos
+dormitorios: 2
+banos: 1
+apto_credito:
+ninos:
+mascotas:
+caracteristicas:
+descripcion_completa:
+verificacion_activa: True
+titulo: Zapata 561 - Semipiso 3 Ambientes con Palier Privado 67 m²

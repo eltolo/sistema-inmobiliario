@@ -1,0 +1,65 @@
+Completitud: 11.1% (1/9)
+- Se detectó la pantalla de verificación; el scraping quedó bloqueado temporalmente.
+- Faltan campos detectados: precio, expensas, metros_totales, metros_cubiertos, ubicacion, orientacion, antiguedad, descripcion_completa
+- Sugerencia LLM: Lo que pegaste **no es el HTML real de Zonaprop**, sino una **página de challenge de Cloudflare** (`Un momento…`).  
+Con ese HTML **no vas a poder sacar** `precio`, `expensas`, `metros_totales`, etc., porque **la ficha no llegó a cargarse**.
+
+## Qué está pasando
+Tu scraper está recibiendo:
+
+- `cdn-cgi/challenge-platform`
+- `Un momento…`
+- meta refresh
+- scripts de verificación
+
+Eso indica que Zonaprop te está bloqueando o pidiendo validación anti-bot.
+
+---
+
+## Recomendación principal
+Antes de buscar selectores, tenés que resolver el acceso:
+
+### Opciones
+1. **Usar un navegador real con Selenium/Playwright**
+   - esperar a que pase el challenge
+   - recién después extraer el DOM
+
+2. **Mantener cookies/sesión**
+   - abrir manualmente una vez
+   - reutilizar cookies en requests/Selenium
+
+3. **Bajar velocidad / rotar IP / headers**
+   - si el bloqueo es por frecuencia
+
+4. **Usar Playwright en vez de Selenium**
+   - suele manejar mejor páginas con JS y challenge
+
+---
+
+## Cómo detectar si estás bloqueado
+Antes de parsear:
+
+```python
+html = driver.page_source
+if "cdn-cgi/challenge-platform" in html or "Un momento" in html:
+    raise Exception("Cloudflare challenge detectado")
+```
+
+---
+
+## Cuando sí tengas la página real
+En Zonaprop, esos campos suelen estar en bloques con etiquetas tipo:
+
+- `precio`
+- `expensas`
+- `superficie total`
+- `superficie cubierta`
+- `ubicación`
+- `orientación`
+- `antigüedad`
+- `descripción`
+
+### Estrategia robusta con BeautifulSoup
+No te cases con clases dinámicas. Mejor:
+
+1. buscar por

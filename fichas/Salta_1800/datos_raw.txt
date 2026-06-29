@@ -1,0 +1,25 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-salta-1800-local-doble-c-deposito-58658931.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-salta-1800-local-doble-c-deposito-58658931.html
+direccion: Salta 1800
+barrio: Constitucion
+tipo: Local Comercial
+operacion: Alquiler
+precio: 1.800.000
+expensas:
+piso:
+ambientes:
+metros_totales:
+metros_cubiertos:
+ubicacion:
+orientacion:
+antiguedad:
+dormitorios:
+banos:
+apto_credito:
+ninos:
+mascotas:
+caracteristicas:
+descripcion_completa:
+verificacion_activa: True
+titulo: Salta 1800 - Local Comercial Doble con Deposito

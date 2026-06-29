@@ -1,0 +1,25 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-alquiler-1-ambiente-palermo-20-m-sup2--a-2-cuadras-58285306.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-alquiler-1-ambiente-palermo-20-m-sup2--a-2-cuadras-58285306.html
+direccion: Palermo
+barrio: Palermo
+tipo: Departamento
+operacion: Alquiler
+precio: 
+expensas: 
+piso: 
+ambientes: 1
+metros_totales: 
+metros_cubiertos: 
+ubicacion: 
+orientacion: 
+antiguedad: 
+dormitorios: 
+banos: 
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: 
+descripcion_completa: 
+verificacion_activa: True
+titulo: www.zonaprop.com.ar

@@ -1,0 +1,25 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-cabrera-3200-3-ambietes-con-cochera-full-amenities-58342260.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-cabrera-3200-3-ambietes-con-cochera-full-amenities-58342260.html
+direccion: Cabrera 3200
+barrio: Palermo
+tipo: Departamento
+operacion: 
+precio: 
+expensas: 
+piso: 
+ambientes: 3
+metros_totales: 
+metros_cubiertos: 
+ubicacion: 
+orientacion: 
+antiguedad: 
+dormitorios: 
+banos: 
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: 
+descripcion_completa: 
+verificacion_activa: True
+titulo: www.zonaprop.com.ar

@@ -1,0 +1,41 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-pasco-100-2-ambientes-reciclado-58532660.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-pasco-100-2-ambientes-reciclado-58532660.html
+direccion: Pasco 100
+barrio: Balvanera
+tipo: Departamento
+operacion: Venta
+precio: USD 65.000
+expensas: 170.000
+piso: 
+ambientes: 2
+metros_totales: 33
+metros_cubiertos: 33
+ubicacion: Frente
+orientacion: O
+antiguedad: 40 años
+dormitorios: 1
+banos: 1
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: DEPARTAMENTO DE 1 1/2 AMBIENTES- CONVERTIDO EN 2- AL FRENTE -TOTALMENTE RECICLADO HACE 10 AÑOS - SÚPER LUMINOSO - HALL DE ENTRADA - COCINA SEPARADA - LAVADERO INCORPORADO - LIVING COMEDOR -DORMITORIO CON PLACARD -BAÑO CON DUCHA- SERVICIOS INDIVIDUALES - EL EDIFICIO CUENTA CON ENCARGADO PERMANENTE - FRENTE A PLAZAA 2 CUADRAS DE Av. RIVADAVIA, SUBTE LINEA "A", A 4 DE Av. ENTRE RÍOS Y A 5 DE JUJUY LINEA DE SUBTE "H".
+CONSÚLTENOS
+CEL. 
+Ver datos
+imagenes:
+  - https://imgar.zonapropcdn.com/avisos/resize/1/00/58/53/26/60/1200x1200/2037493630.jpg?isFirstImage=true
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/53/26/60/360x266/2037493623.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/53/26/60/360x266/2037493625.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/53/26/60/360x266/2037493628.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/53/26/60/360x266/2037493632.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/53/26/60/720x532/2037493630.jpg?isFirstImage=true
+descripcion_completa: DEPARTAMENTO DE 1 1/2 AMBIENTES- CONVERTIDO EN 2- AL FRENTE -TOTALMENTE RECICLADO HACE 10 AÑOS - SÚPER LUMINOSO - HALL DE ENTRADA - COCINA SEPARADA - LAVADERO INCORPORADO - LIVING COMEDOR -DORMITORIO CON PLACARD -BAÑO CON DUCHA- SERVICIOS INDIVIDUALES - EL EDIFICIO CUENTA CON ENCARGADO PERMANENTE - FRENTE A PLAZAA 2 CUADRAS DE Av. RIVADAVIA, SUBTE LINEA "A", A 4 DE Av. ENTRE RÍOS Y A 5 DE JUJUY LINEA DE SUBTE "H".
+CONSÚLTENOS
+CEL. 
+Ver datos
+verificacion_activa: False
+latitud: -34.611381651095280
+longitud: -58.397303850262446
+url_mapa: https://img10.naventcdn.com/ficha/map/Zonaprop/58532660E.png
+titulo: Pasco 100 - 2 Ambientes Reciclado

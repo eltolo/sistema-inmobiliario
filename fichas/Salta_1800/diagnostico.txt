@@ -1,0 +1,4 @@
+Completitud: 0.0% (0/9)
+- Se detectó la pantalla de verificación; el scraping quedó bloqueado temporalmente.
+- Faltan campos detectados: precio, expensas, ambientes, metros_totales, metros_cubiertos, ubicacion, orientacion, antiguedad, descripcion_completa
+- Completar descripcion.txt manualmente (fallback)

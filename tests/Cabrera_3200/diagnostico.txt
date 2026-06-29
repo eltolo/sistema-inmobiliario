@@ -1,0 +1,50 @@
+Completitud: 11.1% (1/9)
+- Se detectó la pantalla de verificación; el scraping quedó bloqueado temporalmente.
+- Faltan campos detectados: precio, expensas, metros_totales, metros_cubiertos, ubicacion, orientacion, antiguedad, descripcion_completa
+- Sugerencia LLM: El HTML que pasaste **no es la página de Zonaprop**, sino una **pantalla de Cloudflare / challenge** (`Un momento…`, `cdn-cgi/challenge-platform`).  
+Con ese contenido **no vas a poder extraer** `precio`, `expensas`, `metros_totales`, etc., porque **todavía no cargó la ficha real**.
+
+### Qué hacer primero
+1. **Esperar a que termine el challenge** antes de parsear.
+2. Verificar que el `page_source` contenga texto real de la propiedad, por ejemplo:
+   - `USD`
+   - `Expensas`
+   - `m²`
+   - `Descripción`
+   - dirección como `Cabrera 3200`
+
+Si no aparecen, estás parseando la página equivocada.
+
+---
+
+## Ajuste recomendado con Selenium
+Usa Selenium para esperar a que el contenido real aparezca y recién ahí pasar a BeautifulSoup.
+
+### Ejemplo
+```python
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
+
+wait = WebDriverWait(driver, 30)
+
+# Esperar a que desaparezca el challenge o aparezca contenido real
+wait.until(lambda d: "challenge-platform" not in d.page_source.lower())
+
+# Opcional: esperar un elemento típico de la ficha
+wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "body")))
+
+html = driver.page_source
+soup = BeautifulSoup(html, "html.parser")
+```
+
+---
+
+## Selectores sugeridos para Zonaprop
+Como Zonaprop suele cambiar clases, conviene usar selectores por **texto/estructura** más que por clases frágiles.
+
+### 1) Precio
+Busca un bloque que contenga moneda:
+```python
+precio = soup.find(string=lambda t: t and ("USD" in t or

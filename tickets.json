@@ -1,0 +1,218 @@
+[
+  {
+    "id": "SCRAPE-001",
+    "titulo": "Robustecer ScrapingBee con parametros premium",
+    "criticidad": "alta",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "completado",
+    "detalle": "Ajustar parametros de ScrapingBee (premium/stealth/wait/timeout), activar modo lento y garantizar continuidad de la ejecucion.",
+    "cambios": "Agregado _cargar_cookies_str(), wait_for, device=desktop, cookies al request. Agregadas vars .env. Eliminado bloque duplicado."
+  },
+  {
+    "id": "SCRAPE-002",
+    "titulo": "Arreglar parseo de respuesta OpenAI",
+    "criticidad": "media",
+    "esfuerzo": "bajo",
+    "impacto": "medio",
+    "estado": "completado",
+    "detalle": "Evitar error ResponseOutputText sin atributo get y asegurar diagnosticos con sugerencias LLM.",
+    "cambios": "obtener_sugerencia_llm ahora prueba output_text, output list y str fallback."
+  },
+  {
+    "id": "SCRAPE-003",
+    "titulo": "Documentar modo autonomo y validaciones",
+    "criticidad": "media",
+    "esfuerzo": "bajo",
+    "impacto": "medio",
+    "estado": "completado",
+    "detalle": "Crear plan, bitacora y actualizar instrucciones con parametros ScrapingBee y criterios de exito.",
+    "cambios": "Actualizado AGENT_LOG.md y tickets.json."
+  },
+  {
+    "id": "MAP-001",
+    "titulo": "Integrar mapa interactivo (Folium + Word + Web)",
+    "criticidad": "media",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "completado",
+    "detalle": "Extraer latitud/longitud/url_mapa del HTML de Zonaprop, generar mapa Folium (.html) para la web y mapa PNG de Navent para Word. Integrar en update_web.py y frontend.",
+    "cambios": "agente.py: _extraer_mapa(), _generar_mapa_folium(). Word: mapa PNG incrustado. update_web.py: copia mapa_interactivo.html + campo map en JSON. property.ts + App.tsx: seccion mapa con iframe. Filtros por tipo/operacion en homepage."
+  },
+  {
+    "id": "ADMIN-001",
+    "titulo": "Panel Admin: carga manual de propiedades",
+    "criticidad": "baja",
+    "esfuerzo": "alto",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "detalle": "El usuario final (admin) debe poder cargar una propiedad manualmente desde el panel web sin depender del scraping de Zonaprop.",
+    "notas": [
+      "MVP actual usa solo scraping. Esta feature es para despues del MVP.",
+      "Crear endpoint POST /api/properties en server.js",
+      "Formulario en el panel Admin.tsx con todos los campos",
+      "Las fotos se suben como archivos y se guardan en public/properties/{id}/Imagenes/",
+      "Generar automaticamente el folder y datos_raw.txt con los datos ingresados",
+      "Ejecutar update_web.py internamente despues de crear la propiedad"
+    ]
+  },
+  {
+    "id": "REDAC-001",
+    "titulo": "Pipeline de redaccion y mejora de textos de propiedades",
+    "criticidad": "media",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "completado",
+    "detalle": "Procesar la descripcion cruda de Zonaprop y reescribirla con formato profesional, corrigiendo ortografia, estructura y tono. Debe generar texto para la web, ficha Word y narracion en audio con CTA final.",
+    "cambios": "Agregado normalize_units() (mts2→m², U$S→USD), parse_descripcion_file() separa datos estructurados, reconstruct_descripcion_file() reensambla sin AUTO_GENERATED, infer_missing_fields() extrae campos del LLM y actualiza datos_raw.txt. Prompt mejorado: solo recibe seccion Caracteristicas, produce 2-3 parrafos con CTA. rewriter_audios.py usa parse_descripcion_file(). 18 tests unitarios. 17/19 propiedades reescritas.",
+    "notas": [
+      "Usar rewriter_descripciones.py como base (actualmente usa OpenAI gpt-4o-mini)",
+      "Estandarizar formato: mayusculas en titulos, bullet points para caracteristicas, parrafos cortos",
+      "Corregir datos crudos: mts2 -> m², sup2 -> ², U$S -> USD, etc.",
+      "Inferir datos faltantes desde la descripcion usando LLM",
+      "Tono profesional del mercado inmobiliario, serio y persuasivo",
+      "La narracion (TTS/audio) debe terminar con un CTA: invitar a contactar, visitar o pedir mas informacion",
+      "CTA examples: 'No dude en contactarnos para coordinar una visita', 'Consúltenos para más información', 'Agende su recorrido hoy'",
+      "El pipeline debe ejecutarse automaticamente al scrapear y tambien poder ejecutarse manualmente sobre propiedades existentes",
+      "STACK DEFINITIVO: OpenAI (gpt-4o-mini) para LLM + ElevenLabs para TTS de alta calidad",
+      "ElevenLabs key en fichas/.env, OpenAI key en .env raiz"
+    ]
+  },
+  {
+    "id": "LEAD-001",
+    "titulo": "Sistema de seguimiento de leads y registro de interesados",
+    "criticidad": "media",
+    "esfuerzo": "alto",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "detalle": "Implementar un sistema CRM liviano con SQLite para capturar leads: formulario de registro en cada propiedad, tracking de clicks a WhatsApp, y panel de administracion de leads.",
+    "notas": [
+      "SQLite: crear leads.db con tablas leads (id, property_id, name, phone, email, looking_for, message, source, created_at) y clicks (id, property_id, timestamp, session_id)",
+      "Endpoint POST /api/leads: recibe datos del formulario de registro y guarda en SQLite",
+      "Endpoint POST /api/clicks: registra cada click a WhatsApp con property_id",
+      "Endpoint GET /api/leads: devuelve todos los leads para el admin",
+      "Endpoint GET /api/clicks/stats: devuelve conteo de clicks por propiedad",
+      "Frontend: formulario modal en cada propiedad (nombre, telefono, email, mensaje) + boton 'Quiero ser contactado'",
+      "Frontend: tracking automatico de clicks en boton de WhatsApp via fetch a /api/clicks antes del redirect",
+      "Admin: nueva pestana 'Leads' con tabla de leads y estadisticas de clicks por propiedad",
+      "Almacenamiento: SQLite (leads.db en carpeta fichas/)",
+      "Exportable a JSON desde el admin"
+    ]
+  },
+  {
+    "id": "DEPLOY-001",
+    "titulo": "Deploy a Hostinger + Fix acentos en propiedades",
+    "criticidad": "alta",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "detalle": "Deploy de la web a Hostinger Node.js Web App. Las imagenes con acentos (Aristobulo, San Jose, Junin, Acuna) daban 422. Se renombraron a ASCII y se desplego via SFTP.",
+    "cambios": "Renombradas 4 carpetas a ASCII, properties.json actualizado, vite rebuild, ZIP creado, subido por SFTP, Passenger restart.",
+    "estado": "completado"
+  },
+  {
+    "id": "DEPLOY-002",
+    "titulo": "Configurar dominio personalizado Quintana.cabapropiedades.ar",
+    "criticidad": "alta",
+    "esfuerzo": "bajo",
+    "impacto": "alto",
+    "detalle": "Configurar el subdominio quintana.cabapropiedades.ar para apuntar al VPS de Hostinger (89.117.7.159) y verificar resolución DNS y carga del sitio.",
+    "cambios": "Registro DNS A para 'quintana' en cabapropiedades.ar apuntando a 89.117.7.159. Copia de .htaccess a public_html/quintana para Passenger. Subida de config.json. Verificación HTTP 200 y API /api/config.",
+    "notas": [
+      "Dominio final: https://quintana.cabapropiedades.ar",
+      "IP del VPS: 89.117.7.159",
+      "Verificado DNS y respuesta HTTP"
+    ],
+    "estado": "completado"
+  },
+  {
+    "id": "SEO-001",
+    "titulo": "Implementar metadatos SEO (JSON-LD, Open Graph, sitemap)",
+    "criticidad": "media",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "detalle": "Agregar structured data JSON-LD, Open Graph tags, meta descripciones, robots.txt y sitemap.xml para mejorar posicionamiento en buscadores.",
+    "cambios": "index.html: meta description, canonical, robots, Open Graph, Twitter Cards y JSON-LD RealEstateAgent. public/robots.txt. scripts/generate-sitemap.js genera dist/sitemap.xml con /, /nosotros y /property/{id}. package.json build actualizado para ejecutar el generador.",
+    "notas": [
+      "JSON-LD con schema.org/RealEstateAgent",
+      "Open Graph tags para el sitio principal (por ahora no dinámicos por propiedad)",
+      "sitemap.xml generado dinámicamente con 20 URLs",
+      "Verificado en producción: /sitemap.xml, /robots.txt y meta tags presentes"
+    ],
+    "estado": "completado"
+  },
+  {
+    "id": "SOCIAL-001",
+    "titulo": "Generar contenido de Instagram para cada propiedad",
+    "criticidad": "media",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "detalle": "Crear tarjeta visual 1080x1080 y caption optimizado para Instagram cada vez que se sincroniza una propiedad. Exponer botón en el panel Admin para descargar imagen y copiar caption.",
+    "cambios": "Nuevo fichas/instagram_generator.py con Pillow. update_web.py genera y copia card.jpg + caption.txt a public/. server.js endpoint GET /api/instagram/:id. Admin.tsx con ícono y modal para descargar/copiar.",
+    "notas": [
+      "Por ahora el contenido se genera manualmente y se copia a Instagram a mano",
+      "Para publicación automática se requiere cuenta Instagram Business/Creator + Facebook App + permisos de Instagram Graph API",
+      "Verificado en producción: /api/instagram/Arenales_2000 y /properties/Arenales_2000/instagram/card.jpg responden OK"
+    ],
+    "estado": "completado"
+  },
+  {
+    "id": "SOCIAL-002",
+    "titulo": "Setup de Meta App y credenciales para Instagram Graph API",
+    "criticidad": "media",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "detalle": "El backend y el panel admin ya tienen el endpoint y botón para publicar en Instagram. Falta crear/configurar la app de Meta, obtener el Instagram Account ID y Access Token de Graph API, y completar esos valores en la configuración del admin.",
+    "cambios": "Ninguno en el código. Acciones externas: crear App de Facebook, convertir la cuenta de Instagram en Business/Creator, vincular a página de Facebook, generar Access Token con permisos instagram_basic, instagram_content_publish y pages_read_engagement.",
+    "notas": [
+      "El botón Publicar en Instagram ya está en Admin.tsx",
+      "El endpoint POST /api/publish-instagram/:id ya está en server.js",
+      "El backend devuelve un error claro si faltan las credenciales"
+    ],
+    "estado": "pendiente"
+  },
+  {
+    "id": "DATA-001",
+    "titulo": "Completar datos faltantes en propiedades (Salta 1800, Zapata 561)",
+    "criticidad": "alta",
+    "esfuerzo": "bajo",
+    "impacto": "alto",
+    "detalle": "Salta_1800 y Zapata_561 tenian title='www.zonaprop.com.ar' y datos incompletos por bloqueo de Cloudflare al scrapear. Se corrigieron manualmente en properties.json y archivos fuente.",
+    "cambios": "Zapata_561: title fijo, price/expensas/area/orientacion/age completados desde descripcion.txt existente. Salta_1800: title, neighborhood, type, operation, description fijados. Vite rebuild + deploy a Hostinger.",
+    "estado": "completado"
+  },
+  {
+    "id": "ADMIN-002",
+    "titulo": "Campos editables avanzados en panel Admin",
+    "criticidad": "media",
+    "esfuerzo": "bajo",
+    "impacto": "alto",
+    "estado": "completado",
+    "detalle": "Agregar edicion de tipo, ambientes, dormitorios, baños, antiguedad, orientacion, luminoso, metros totales y metros cubiertos en el panel Admin. Agregar campo dormitorios/bedrooms al modelo de datos.",
+    "cambios": "Admin.tsx: dirtyFields ampliado con 6 nuevos campos. server.js: updateField() generico que crea lineas si no existen. update_web.py: bathrooms, luminoso agregados al JSON. Property type: bedrooms, bathrooms, luminoso agregados. PropertyDetails.tsx fix: dormitorios ya no muestra rooms. Bug fix: admin ahora escribe tipo.txt al guardar tipo."
+  },
+  {
+    "id": "ADMIN-003",
+    "titulo": "Progreso en tiempo real para scraping desde Admin",
+    "criticidad": "media",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "completado",
+    "detalle": "Al agregar una URL desde el panel Admin, mostrar modal con progreso en vivo en vez de devolver un mensaje diciendo 'abri la terminal'.",
+    "cambios": "server.js: spawn reemplaza exec, STAGE markers en stdout, polling endpoint /api/scrape-status/:jobId. Admin.tsx: modal con spinner, logs, recarga automatica."
+  },
+  {
+    "id": "ADMIN-004",
+    "titulo": "Gestion de fotos de propiedades en panel Admin",
+    "criticidad": "alta",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "completado",
+    "detalle": "Agregar al panel admin un modal para gestionar las fotos de cada propiedad: seleccionar foto de portada, eliminar fotos y subir nuevas fotos.",
+    "cambios": "server.js: endpoints GET /api/property/:id/photos, POST /api/property/:id/photos/cover, DELETE /api/property/:id/photos/:filename, POST /api/property/:id/photos (multer), GET /api/property/:id/photos/:filename/file. Admin.tsx: estado photoModal, funciones loadPhotos, setCoverPhoto, deletePhoto, uploadPhotos, boton Gestionar fotos por propiedad, modal con grid, upload, cover y delete. zip_site.py: incluye carpeta fichas/ en el ZIP para produccion. server.js: detecta BASE_DIR en __dirname/../fichas o __dirname/fichas.",
+    "notas": [
+      "Testeado en dev local: set cover, upload y delete funcionan correctamente",
+      "Deployado a produccion en Hostinger y verificado: modal carga fotos, portada cambia, upload y delete aplican en el servidor",
+      "La portada queda registrada en cover.txt dentro de la carpeta de la propiedad"
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/alclocin-oficina-amoblada-ayacucho-al-400-58984383.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/alclocin-oficina-amoblada-ayacucho-al-400-58984383.html
+direccion: Ayacucho 400
+barrio: Balvanera
+tipo: Oficina
+operacion: Alquiler
+precio: 550.000
+expensas: 120.000
+piso: 
+ambientes: 3
+metros_totales: 50
+metros_cubiertos: 43
+ubicacion: frente
+orientacion: frente
+antiguedad: 55 años
+dormitorios: 2
+banos: 2
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: AYACUCHO 400- OFICINA AMOBLADA - AL FRENTE - CON BALCÓN - 3 AMBIENTES- 2 DESPACHOS - EQUIPADA- SE ENTREGA CON PISOS NUEVOS Y RECIÉN PINTADA - LOS BAÑOS SE ENCUENTRAN EN EL PALIER DEL PISO - EL EDIFICIO CUENTA CON ENCARGADO PERMANENTE - A METROS DE Av. CORRIENTES, SUBTE LINEA "B"- INFINIDAD DE LINEAS DE COLECTIVOS - A 3 CUADRAS DE Av. CÓRDOBA.
+ES SÓLO USO PROFESIONAL- CONSÚLTENOS
+CEL. 
+Ver datos
+imagenes:
+  - https://imgar.zonapropcdn.com/avisos/resize/1/00/58/98/43/83/1200x1200/2049502501.jpg?isFirstImage=true
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/98/43/83/360x266/2049502493.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/98/43/83/360x266/2049502500.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/98/43/83/360x266/2049502495.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/98/43/83/360x266/2049502499.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/98/43/83/720x532/2049502501.jpg?isFirstImage=true
+descripcion_completa: AYACUCHO 400- OFICINA AMOBLADA - AL FRENTE - CON BALCÓN - 3 AMBIENTES- 2 DESPACHOS - EQUIPADA- SE ENTREGA CON PISOS NUEVOS Y RECIÉN PINTADA - LOS BAÑOS SE ENCUENTRAN EN EL PALIER DEL PISO - EL EDIFICIO CUENTA CON ENCARGADO PERMANENTE - A METROS DE Av. CORRIENTES, SUBTE LINEA "B"- INFINIDAD DE LINEAS DE COLECTIVOS - A 3 CUADRAS DE Av. CÓRDOBA.
+ES SÓLO USO PROFESIONAL- CONSÚLTENOS
+CEL. 
+Ver datos
+verificacion_activa: False
+latitud: -34.603953633025945
+longitud: -58.395320326983640
+url_mapa: https://img10.naventcdn.com/ficha/map/Zonaprop/58984383E.png
+titulo: Oficina Amoblada - Ayacucho Al 400
+
+luminoso: Si

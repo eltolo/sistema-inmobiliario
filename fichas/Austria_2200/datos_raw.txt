@@ -1,0 +1,68 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-austria-2200-monoambiente-30-m-frente-muy-luminoso-58481579.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-austria-2200-monoambiente-30-m-frente-muy-luminoso-58481579.html
+direccion: Austria 2200
+barrio: Recoleta
+tipo: Departamento
+operacion: Alquiler
+precio: 480.000
+expensas: 190.000
+ambientes: 1
+metros_totales: 30
+metros_cubiertos: 30
+ubicacion: Frente
+orientacion: O
+antiguedad: 40 años
+dormitorios: 0
+banos: 1
+apto_credito: No
+ninos: 
+mascotas: No
+caracteristicas: DEPARTAMENTO MONOAMBIENTE- 30 mts2- AL FRENTE- SUPER LUMINOSO. EL DEPARTAMENTO CUENTA CON:
+-HALL ENTRADA.
+-AMBIENTE A LO LARGO CON PISOS EN PARQUET.
+-COCINA KITCHNET. CON ANAFE Y HORNO ELÉCTRICO.
+-PLACARD EMPOTRADO.
+-BAÑO COMPLETO CON VENTILACIÓN NATURAL.
+-AIRE ACONDICIONADO EMPOTRADO.
+-AGUA CALIENTE CENTRAL.
+-EDIFICIO APTO PROFESIONAL.
+SE ENTREGA RECIÉN PINTADO Y LOS PISOS RECIÉN PULIDOS Y PLASTIFICADOS.
+EL EDIFICIO CUENTA CON ENCARGADO PERMANENTE, ASCENSOR.-
+EL EDIFICIO SE ENCUENTRA EN UNA DE LAS ZONAS MÁS LINDAS DE RECOLETA, A 2 CUADRAS DE Av. LAS HERAS, CERCANO A LA BIBLIOTECA NACIONAL, A 3 CUADRAS DE SUBTE LINEA "H", A 4 DE Av. LIBERTADOR, A 5 DE Av. Sta. FÉ.-
+IDEAL PARA ESTUDIANTE.
+NO SE ACEPTAN MASCOTAS.
+CONTRATO X 2 AÑOS CON AUMENTO TRIMESTRAL X IPC.
+CONSÚLTENOS
+CEL. 
+Ver datos
+imagenes:
+  - https://imgar.zonapropcdn.com/avisos/resize/1/00/58/48/15/79/1200x1200/2046936200.jpg?isFirstImage=true
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/48/15/79/360x266/2046936201.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/48/15/79/360x266/2046936198.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/48/15/79/360x266/2046936199.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/48/15/79/360x266/2036102157.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/58/48/15/79/720x532/2046936200.jpg?isFirstImage=true
+descripcion_completa: DEPARTAMENTO MONOAMBIENTE- 30 mts2- AL FRENTE- SUPER LUMINOSO. EL DEPARTAMENTO CUENTA CON:
+-HALL ENTRADA.
+-AMBIENTE A LO LARGO CON PISOS EN PARQUET.
+-COCINA KITCHNET. CON ANAFE Y HORNO ELÉCTRICO.
+-PLACARD EMPOTRADO.
+-BAÑO COMPLETO CON VENTILACIÓN NATURAL.
+-AIRE ACONDICIONADO EMPOTRADO.
+-AGUA CALIENTE CENTRAL.
+-EDIFICIO APTO PROFESIONAL.
+SE ENTREGA RECIÉN PINTADO Y LOS PISOS RECIÉN PULIDOS Y PLASTIFICADOS.
+EL EDIFICIO CUENTA CON ENCARGADO PERMANENTE, ASCENSOR.-
+EL EDIFICIO SE ENCUENTRA EN UNA DE LAS ZONAS MÁS LINDAS DE RECOLETA, A 2 CUADRAS DE Av. LAS HERAS, CERCANO A LA BIBLIOTECA NACIONAL, A 3 CUADRAS DE SUBTE LINEA "H", A 4 DE Av. LIBERTADOR, A 5 DE Av. Sta. FÉ.-
+IDEAL PARA ESTUDIANTE.
+NO SE ACEPTAN MASCOTAS.
+CONTRATO X 2 AÑOS CON AUMENTO TRIMESTRAL X IPC.
+CONSÚLTENOS
+CEL. 
+Ver datos
+verificacion_activa: False
+latitud: -34.587093542750054
+longitud: -58.402447681475834
+url_mapa: https://img10.naventcdn.com/ficha/map/Zonaprop/58481579E.png
+titulo: Austria 2200 - Monoambiente 30 m Frente - Muy Luminoso - Apto Profesional

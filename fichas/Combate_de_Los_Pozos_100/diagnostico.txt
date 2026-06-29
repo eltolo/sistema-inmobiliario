@@ -1,0 +1,63 @@
+Completitud: 77.8% (7/9)
+- Faltan campos detectados: ubicacion, orientacion
+- Sugerencia LLM: Sí: en Zonaprop esos campos suelen venir en el bloque de **ficha/detalles** y, cuando no están en el HTML “visible” inicial, a veces aparecen en:
+
+1. **listas de atributos** (`li`, `dl`, `dt/dd`)
+2. **JSON embebido** en `script` (`__NEXT_DATA__`, `application/ld+json`, o algún state inicial)
+3. **texto de breadcrumb / ubicación** en el encabezado
+
+Para tu caso, yo probaría este enfoque en orden.
+
+---
+
+## 1) Ubicación: buscar en breadcrumbs o en el bloque de datos del aviso
+
+En Zonaprop la ubicación suele estar en un breadcrumb tipo:
+
+- `nav[aria-label="breadcrumb"]`
+- `ol.breadcrumb`
+- o algún contenedor con links de zona
+
+### Selector sugerido
+```python
+soup.select_one('nav[aria-label="breadcrumb"]')
+```
+
+o más flexible:
+
+```python
+soup.select_one('ol.breadcrumb')
+```
+
+### Extracción típica
+```python
+breadcrumb = soup.select('nav[aria-label="breadcrumb"] a, ol.breadcrumb a')
+ubicacion = " > ".join([a.get_text(" ", strip=True) for a in breadcrumb])
+```
+
+Si eso no devuelve nada, buscá en el HTML por texto como:
+- `Capital Federal`
+- `Balvanera`
+- `Combate de Los Pozos`
+
+y revisá si está en un bloque tipo:
+```html
+<div class="location">
+```
+o
+```html
+<span class="section-location">
+```
+
+---
+
+## 2) Orientación: suele estar en la grilla de características
+
+La orientación normalmente aparece como un par **label/value** dentro de una lista de características.
+
+### Patrón robusto
+Buscá elementos con texto “Orientación” y tomá el valor hermano.
+
+#### Con BeautifulSoup
+```python
+orient

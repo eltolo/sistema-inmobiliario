@@ -1,0 +1,29 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/veclgain-vidt-1900-cochera-fija-cubierta-58633899.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/veclgain-vidt-1900-cochera-fija-cubierta-58633899.html
+direccion: Vidt 1900
+barrio: Palermo
+tipo: Departamento
+operacion: Venta
+precio: USD 12.000
+expensas: 113.000
+piso: 5
+ambientes: 
+metros_totales: 15
+metros_cubiertos: 15
+ubicacion: frente
+orientacion: 
+antiguedad: 40 años
+dormitorios: 
+banos: 
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: COCHERA FIJA, CUBIERTA- 15 mts2 POR ESCRITURA - PARA AUTO GRANDE (ESPACIO DE 6 X 2.70) - ACCESO X ASCENSOR - UBICADA EN 5° PISO- GRUPO ELECTRÓGENO - PORTÓN AUTOMÁTICO- PERSONAL POR LA MAÑANA Y NOCHE HASTA 05 AM- A 2 CUADRAS Av. Sta. FÉ A 1 DE BOULEVAR CHARCAS - CONSÚLTENOS
+Cel. 
+Ver datos
+descripcion_completa: COCHERA FIJA, CUBIERTA- 15 mts2 POR ESCRITURA - PARA AUTO GRANDE (ESPACIO DE 6 X 2.70) - ACCESO X ASCENSOR - UBICADA EN 5° PISO- GRUPO ELECTRÓGENO - PORTÓN AUTOMÁTICO- PERSONAL POR LA MAÑANA Y NOCHE HASTA 05 AM- A 2 CUADRAS Av. Sta. FÉ A 1 DE BOULEVAR CHARCAS - CONSÚLTENOS
+Cel. 
+Ver datos
+verificacion_activa: False
+titulo: Vidt 1900 - Cochera Fija - Cubierta

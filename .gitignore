@@ -1,0 +1,74 @@
+# Secretos y variables de entorno
+.env
+.env.local
+.env.*.local
+fichas/.env
+fichas/.env.local
+fichas/.env.*.local
+
+# Credenciales y tokens
+*.pem
+*.key
+*.crt
+secrets.json
+
+# Logs y datos de ejecución
+logs/
+*.log
+
+# Backups y archivos temporales
+backups/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Datos procesados y grandes
+site_express.zip
+*.zip
+
+# Dependencias de Node.js
+node_modules/
+
+# Build de frontend
+fichas/web-propiedades/dist/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Archivos de IDE
+.vscode/
+.idea/
+.trae/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+nul
+
+# Copia antigua del frontend en la raíz (el actual está en fichas/web-propiedades/)
+/web-propiedades/
+
+# Archivos de cookies y sesiones
+cookies.txt
+cookies/
+zonaprop_cookies.json
+
+# Archivos de configuración con datos sensibles (mantener example)
+# fichas/config.json
+
+# Datos crudos y generados
+data/raw/
+data/raw_html/
+data/processed/
+results/
+reports/
+db/
+
+# Archivos de audio/video generados
+multimedia/

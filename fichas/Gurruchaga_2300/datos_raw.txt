@@ -1,0 +1,31 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-alquiler-1-ambiente-palermo-20-m-sup2--a-2-cuadras-58285306.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-alquiler-1-ambiente-palermo-20-m-sup2--a-2-cuadras-58285306.html
+direccion: Gurruchaga 2300
+barrio: Palermo Soho
+tipo: Departamento
+operacion: Alquilado
+precio: 470.000
+expensas: 110.000
+piso: 
+ambientes: 1
+metros_totales: 20
+metros_cubiertos: 20
+ubicacion: Frente
+orientacion: frente
+antiguedad: 50 años
+dormitorios: 0
+banos: 1
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: DEPARTAMENTO MONOAMBIENTE DE 20 mts2- AL FRENTE - AMBIENTE CON PLACARD DE 2 PUERTAS -COCINA SEPARADA - AMPLIO BAÑO - SE ENTREGA RECIÉN PINTADO - AGUA CALIETE INDIVIDUAL POR TERMOTANQUE - EL EDIFICIO CUENTA CON ENCARGADO CON VIVIENDA - A 2 CUADRAS DE Av. Sta. FÉ, JARDÍN BOTÁNICO, SUBTE LINEA "D", METROBUS, MUCHAS LINEAS DE COLECTIVO HACIA TODAS PARTES DE LA CIUDAD. IDEAL ALQUILER PARA ESTUDIANTE.
+CONSÚLTENOS
+Cel. 
+Ver datos
+descripcion_completa: DEPARTAMENTO MONOAMBIENTE DE 20 mts2- AL FRENTE - AMBIENTE CON PLACARD DE 2 PUERTAS -COCINA SEPARADA - AMPLIO BAÑO - SE ENTREGA RECIÉN PINTADO - AGUA CALIETE INDIVIDUAL POR TERMOTANQUE - EL EDIFICIO CUENTA CON ENCARGADO CON VIVIENDA - A 2 CUADRAS DE Av. Sta. FÉ, JARDÍN BOTÁNICO, SUBTE LINEA "D", METROBUS, MUCHAS LINEAS DE COLECTIVO HACIA TODAS PARTES DE LA CIUDAD. IDEAL ALQUILER PARA ESTUDIANTE.
+CONSÚLTENOS
+Cel. 
+Ver datos
+verificacion_activa: False
+titulo: Alquiler 1 Ambiente - Palermo - 20 m² a 2 Cuadras Jardín Botánico

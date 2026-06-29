@@ -1,0 +1,55 @@
+Completitud: 11.1% (1/9)
+- Se detectó la pantalla de verificación; el scraping quedó bloqueado temporalmente.
+- Faltan campos detectados: precio, expensas, metros_totales, metros_cubiertos, ubicacion, orientacion, antiguedad, descripcion_completa
+- Sugerencia LLM: Ese HTML **no es la ficha de Zonaprop**, sino una **página de challenge de Cloudflare** (“Un momento…”).  
+Con ese contenido **no vas a poder extraer** `precio`, `expensas`, `metros_totales`, etc., porque **la página real no está cargada**.
+
+### Qué significa
+- Selenium está recibiendo el **bloqueo anti-bot**.
+- BeautifulSoup solo verá ese HTML de challenge.
+- Por eso te falta casi todo: no es un problema de selector, sino de **acceso al contenido**.
+
+---
+
+## Recomendación principal
+Antes de buscar selectores, asegurate de que Selenium llegue a la ficha real.
+
+### Señales para detectar bloqueo
+```python
+if "Un momento" in driver.title or "challenge-platform" in driver.page_source:
+    print("Bloqueado por Cloudflare")
+```
+
+---
+
+## Ajustes que sí te convienen
+
+### 1) Esperar la carga real de la ficha
+Si lográs pasar el challenge, usá `WebDriverWait`:
+
+```python
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+wait = WebDriverWait(driver, 20)
+wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "body")))
+```
+
+Y luego verificá que existan elementos de la ficha, por ejemplo:
+```python
+wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-qa='item-price']")))
+```
+
+---
+
+### 2) Extraer con selectores robustos
+En Zonaprop suelen cambiar clases, así que conviene priorizar:
+- `data-qa`
+- `itemprop`
+- texto cercano a labels como “Expensas”, “Superficie total”, etc.
+
+Ejemplos de estrategia:
+
+```python
+precio = soup.select_one("[

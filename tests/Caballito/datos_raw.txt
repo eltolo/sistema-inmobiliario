@@ -1,0 +1,25 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-caballito-semipiso-de-3-ambientes-57-m-sup2--super-58374683.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-caballito-semipiso-de-3-ambientes-57-m-sup2--super-58374683.html
+direccion: Caballito
+barrio: Caballito
+tipo: Departamento
+operacion: 
+precio: 
+expensas: 
+piso: 
+ambientes: 3
+metros_totales: 
+metros_cubiertos: 
+ubicacion: 
+orientacion: 
+antiguedad: 
+dormitorios: 
+banos: 
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: 
+descripcion_completa: 
+verificacion_activa: True
+titulo: www.zonaprop.com.ar

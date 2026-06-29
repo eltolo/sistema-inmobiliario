@@ -1,0 +1,25 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-villa-urquiza-ph-3-ambientes-95-m-sup2--totales-con-58376274.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/veclphin-villa-urquiza-ph-3-ambientes-95-m-sup2--totales-con-58376274.html
+direccion: Villa Urquiza
+barrio: Villa Urquiza
+tipo: Departamento
+operacion: 
+precio: 
+expensas: 
+piso: 
+ambientes: 3
+metros_totales: 
+metros_cubiertos: 
+ubicacion: 
+orientacion: 
+antiguedad: 
+dormitorios: 
+banos: 
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: 
+descripcion_completa: 
+verificacion_activa: True
+titulo: www.zonaprop.com.ar

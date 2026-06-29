@@ -1,0 +1,70 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-recoleta-junin-al-1100-2-ambientes-con-balcon-59341876.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/alclapin-recoleta-junin-al-1100-2-ambientes-con-balcon-59341876.html
+direccion: Junín 1100
+barrio: Recoleta
+tipo: Departamento
+operacion: Alquiler
+precio: 800.000
+expensas: 150.000
+piso: 
+ambientes: 2
+metros_totales: 46
+metros_cubiertos: 42
+ubicacion: Contrafrente
+orientacion: O
+antiguedad: 45 años
+dormitorios: 1
+banos: 1
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: EXCLENETE DEPARTAMENTO DE 2 AMBIENTES- AL CONTRAFRENTE - CON BALCÓN.
+EL DEPARTAMENTO CUENTA CON:
+-HALL DE ENTRADA.
+AMPLIO LIVING COMEDOR CON PISOS EN PARQUÉ Y UN PLACARD DE GUARDADO.
+-SALIDA AL BALCÓN.
+-COCINA SEPARADA CON AMOBLAMIENTOS ALYOS Y BAJOS, COCINA A GAS NUEVA.
+-LAVADERO INDEPENDIENTE.
+-PASILLO DE DISTRIBUCIÓN CON OTRO PLACARD DE GUARDADO.
+-BAÑO COMPLETO.
+-DORMITORIO CON PISOS EN PARQUÉ Y PLACARD EMPOTRADO.
+-SERVICIOS DE AGUA CALIENTE Y CALEFACCIÓN INDIVIDUAL.
+- LA UNIDAD SE ENTREGA RECIÉN PINTADA, CON CALEFÓN, CALEFACTOR Y COCINA NUEVOS. INSTALACIÓN ELÉCTRICA TODA A NUEVO.
+-AIRE ACONDICIONADO INSTALADO EN LIVING COMEDOR.
+EL EDIFICIO TIENE ENCARGADO PERMANENTE.
+A MEDIA CUADRA DE Av. Sta. FÉ, A 3 DE Av. LAS HERAS, A 4 DE Av. PUEYRREDÓN.
+CONSÚLTENOS.
+CEL. 
+Ver datos
+imagenes:
+  - https://imgar.zonapropcdn.com/avisos/resize/1/00/59/34/18/76/1200x1200/2058524494.jpg?isFirstImage=true
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/34/18/76/360x266/2058524501.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/34/18/76/360x266/2058524500.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/34/18/76/360x266/2058524495.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/34/18/76/360x266/2058524503.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/34/18/76/720x532/2058524494.jpg?isFirstImage=true
+descripcion_completa: EXCLENETE DEPARTAMENTO DE 2 AMBIENTES- AL CONTRAFRENTE - CON BALCÓN.
+EL DEPARTAMENTO CUENTA CON:
+-HALL DE ENTRADA.
+AMPLIO LIVING COMEDOR CON PISOS EN PARQUÉ Y UN PLACARD DE GUARDADO.
+-SALIDA AL BALCÓN.
+-COCINA SEPARADA CON AMOBLAMIENTOS ALYOS Y BAJOS, COCINA A GAS NUEVA.
+-LAVADERO INDEPENDIENTE.
+-PASILLO DE DISTRIBUCIÓN CON OTRO PLACARD DE GUARDADO.
+-BAÑO COMPLETO.
+-DORMITORIO CON PISOS EN PARQUÉ Y PLACARD EMPOTRADO.
+-SERVICIOS DE AGUA CALIENTE Y CALEFACCIÓN INDIVIDUAL.
+- LA UNIDAD SE ENTREGA RECIÉN PINTADA, CON CALEFÓN, CALEFACTOR Y COCINA NUEVOS. INSTALACIÓN ELÉCTRICA TODA A NUEVO.
+-AIRE ACONDICIONADO INSTALADO EN LIVING COMEDOR.
+EL EDIFICIO TIENE ENCARGADO PERMANENTE.
+A MEDIA CUADRA DE Av. Sta. FÉ, A 3 DE Av. LAS HERAS, A 4 DE Av. PUEYRREDÓN.
+CONSÚLTENOS.
+CEL. 
+Ver datos
+verificacion_activa: False
+latitud: -34.595054611324230
+longitud: -58.397246742327890
+url_mapa: https://img10.naventcdn.com/ficha/map/Zonaprop/59341876E.png
+titulo: Recoleta - Junin Al 1100 - 2 Ambientes con Balcón - Cocina Separada y Lavadero
+baños: 1

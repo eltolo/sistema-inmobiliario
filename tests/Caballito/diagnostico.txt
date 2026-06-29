@@ -1,0 +1,59 @@
+Completitud: 11.1% (1/9)
+- Se detectó la pantalla de verificación; el scraping quedó bloqueado temporalmente.
+- Faltan campos detectados: precio, expensas, metros_totales, metros_cubiertos, ubicacion, orientacion, antiguedad, descripcion_completa
+- Sugerencia LLM: Lo que muestras **no es el HTML real de Zonaprop**, sino una **página de challenge de Cloudflare** (`Un momento…`, `/cdn-cgi/challenge-platform/...`).  
+Con ese HTML **no vas a poder extraer** `precio`, `expensas`, `metros_*`, `ubicacion`, `orientacion`, `antiguedad` ni `descripcion_completa`, porque **todavía no cargó la ficha**.
+
+### Qué significa
+Tu scraper está capturando:
+- la respuesta del bloqueo/interstitial de Cloudflare
+- no la página de detalle del aviso
+
+### Ajuste recomendado
+#### 1) Primero validar que realmente llegaste a la ficha
+Antes de parsear con BeautifulSoup, chequeá algo como:
+- `title` no sea `"Un momento…"`
+- no exista `cdn-cgi/challenge-platform`
+- exista algún contenedor típico del aviso
+
+Ejemplo:
+
+```python
+if "challenge-platform" in html or "Un momento" in html:
+    raise Exception("Cloudflare challenge detectado")
+```
+
+---
+
+## Si lográs obtener el HTML real, estos son los selectores a probar
+
+Zonaprop suele cambiar bastante el DOM, así que conviene usar **selectores por texto + fallback**.
+
+### 1) Precio
+Buscar etiquetas con texto tipo:
+- `$ 123.000`
+- `USD 120.000`
+
+Posibles estrategias:
+```python
+soup.select_one('[data-qa="POSTING_CARD_PRICE"]')
+```
+
+o por regex sobre todo el texto:
+
+```python
+import re
+m = re.search(r'(\$|USD)\s?[\d\.\,]+', soup.get_text(" ", strip=True))
+```
+
+---
+
+### 2) Expensas
+Suele aparecer como texto:
+- `Expensas $...`
+- `Expensas: ...`
+
+Buscar por texto en bloques de características:
+
+```python
+re

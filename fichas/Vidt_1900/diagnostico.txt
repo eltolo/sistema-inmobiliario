@@ -1,0 +1,2 @@
+Completitud: 66.7% (6/9)
+- Faltan campos detectados: ambientes, ubicacion, orientacion

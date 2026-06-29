@@ -1,0 +1,69 @@
+URL: https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-almagro-2-ambientes-muy-luminoso-59404299.html
+
+url: https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-almagro-2-ambientes-muy-luminoso-59404299.html
+direccion: Francisco Acuña de Figueroa 800
+barrio: Almagro Norte
+tipo: Departamento
+operacion: Venta
+precio: USD 62.000
+expensas: 130.000
+piso: 
+ambientes: 2
+metros_totales: 33
+metros_cubiertos: 33
+ubicacion: Lateral
+orientacion: NE
+antiguedad: 55 años
+dormitorios: 1
+banos: 1
+apto_credito: 
+ninos: 
+mascotas: 
+caracteristicas: DEPARTAMENTO DE 2 AMBIENTES- LATERAL- SÚPER LUMINOSO.
+LA UNIDAD CUENTA CON:
+-LIVING COMEDOR CON PISOS EN PARQUÉ.
+-AMPLIA COCINA SEPARADA, DE 4 X 1.60 CON MUEBLES ALTOS Y BAJOS, HECHOS HACE POCO TIEMPO.
+-LAVADERO INCORPORADO EN COCINA.
+-BAÑO COMPLETO.
+-PLACARD EN PASILLO.
+-DORMITORIO CON AIRE EMPOTRADO EN PARED.
+-SERVICIOS INDIVIDUALES, AGUA CALIENTE POR CALEFÓN.
+-EL EDIFICIO CUENTA CON ENCARGADO PERMANENTE.
+A 1 CUADRA DE Av. CORRIENTES.
+A 3 CUADRAS Av. CÓRDOBA.
+A 2 CUADRAS DE LINEA "B" SUBTE, ESTACIÓN MEDRANO.
+CONSÚLTENOS.
+QUINTANA SERVICIOS INMOBILIARIOS
+MATR. 8216
+CEL. 
+Ver datos
+imagenes:
+  - https://imgar.zonapropcdn.com/avisos/resize/1/00/59/40/42/99/1200x1200/2060384280.jpg?isFirstImage=true
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/40/42/99/360x266/2060384278.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/40/42/99/360x266/2060384279.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/40/42/99/360x266/2060384273.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/40/42/99/360x266/2060384277.jpg
+  - https://imgar.zonapropcdn.com/avisos/1/00/59/40/42/99/720x532/2060384280.jpg?isFirstImage=true
+descripcion_completa: DEPARTAMENTO DE 2 AMBIENTES- LATERAL- SÚPER LUMINOSO.
+LA UNIDAD CUENTA CON:
+-LIVING COMEDOR CON PISOS EN PARQUÉ.
+-AMPLIA COCINA SEPARADA, DE 4 X 1.60 CON MUEBLES ALTOS Y BAJOS, HECHOS HACE POCO TIEMPO.
+-LAVADERO INCORPORADO EN COCINA.
+-BAÑO COMPLETO.
+-PLACARD EN PASILLO.
+-DORMITORIO CON AIRE EMPOTRADO EN PARED.
+-SERVICIOS INDIVIDUALES, AGUA CALIENTE POR CALEFÓN.
+-EL EDIFICIO CUENTA CON ENCARGADO PERMANENTE.
+A 1 CUADRA DE Av. CORRIENTES.
+A 3 CUADRAS Av. CÓRDOBA.
+A 2 CUADRAS DE LINEA "B" SUBTE, ESTACIÓN MEDRANO.
+CONSÚLTENOS.
+QUINTANA SERVICIOS INMOBILIARIOS
+MATR. 8216
+CEL. 
+Ver datos
+verificacion_activa: False
+latitud: -34.601576588771860
+longitud: -58.422433769311510
+url_mapa: https://img10.naventcdn.com/ficha/map/Zonaprop/59404299E.png
+titulo: Almagro - 2 Ambientes - Muy Luminoso

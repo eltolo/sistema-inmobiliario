@@ -1,0 +1,54 @@
+Completitud: 88.9% (8/9)
+- Faltan campos detectados: orientacion
+- Sugerencia LLM: Sí: en Zonaprop ese campo suele venir **solo en el bloque de “Características”** y a veces **no está en el HTML inicial visible**, sino en un nodo renderizado por JS o en un `li`/`div` con texto tipo **“Orientación”**.
+
+### Recomendación práctica
+Usá una estrategia en 2 pasos:
+
+1. **Selenium** para esperar que cargue el bloque de características.
+2. **BeautifulSoup** para buscar por texto y no por clases frágiles.
+
+---
+
+## 1) Selector robusto para “Orientación”
+En vez de depender de clases, buscá el label por texto:
+
+```python
+from bs4 import BeautifulSoup
+
+soup = BeautifulSoup(driver.page_source, "html.parser")
+
+# Buscar cualquier nodo que contenga "Orientación"
+nodes = soup.find_all(string=lambda t: t and "Orientación" in t)
+print(nodes)
+```
+
+Luego, para cada coincidencia, inspeccioná el contenedor padre:
+
+```python
+for n in nodes:
+    print(n.parent.get_text(" ", strip=True))
+    print("----")
+```
+
+---
+
+## 2) Extraer el valor asociado
+En Zonaprop suele estar en una estructura tipo:
+
+- `label` / `dt` / `span` con el nombre del campo
+- y al lado el valor en otro nodo
+
+Podés probar este patrón genérico:
+
+```python
+def get_feature_value(soup, feature_name):
+    # Busca nodos que contengan el nombre exacto
+    candidates = soup.find_all(string=lambda t: t and feature_name.lower() in t.lower())
+    for c in candidates:
+        parent = c.parent
+        text = parent.get_text(" ", strip=True)
+
+        # Si el mismo nodo ya trae "Orientación Norte"
+        if feature_name.lower() in text.lower() and len(text.split()) > 1:
+            return text.replace
