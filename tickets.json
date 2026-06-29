@@ -214,5 +214,22 @@
       "Deployado a produccion en Hostinger y verificado: modal carga fotos, portada cambia, upload y delete aplican en el servidor",
       "La portada queda registrada en cover.txt dentro de la carpeta de la propiedad"
     ]
+  },
+  {
+    "id": "TICKET-001",
+    "titulo": "Landing principal orientada a captar propietarios",
+    "criticidad": "critica",
+    "esfuerzo": "alto",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "detalle": "Transformar la Home para que el visitante entienda en menos de 5 segundos qué hace la inmobiliaria, en qué zona trabaja, cómo contactar rápidamente y por qué confiar en Quintana. El negocio inmobiliario comienza consiguiendo propiedades para comercializar, por lo que la página debe atraer propietarios.",
+    "cambios": "Home.tsx: rediseñar Hero con título 'Vendé o alquilá tu propiedad en CABA con atención personalizada y tecnología', subtítulo, botones 'Solicitar Tasación' y 'WhatsApp'. Agregar sección de 4 beneficios (Tasación Profesional, Fotografías de Alta Calidad, Máxima Difusión, Acompañamiento Personalizado). Sección '¿Por qué elegirnos?' con checklist de confianza. Sección 'Claudia' con foto profesional, texto y botón 'Hablar con Claudia'. CTA final con formulario de tasación. SEO: meta tags, Open Graph y Schema.org LocalBusiness.",
+    "notas": [
+      "El Hero debe tener CTA visible sin scroll.",
+      "WhatsApp debe estar visible permanentemente.",
+      "Lighthouse Performance > 90 y SEO > 95.",
+      "Compatible desktop y mobile.",
+      "Imágenes comprimidas y optimizadas."
+    ]
   }
 ]

@@ -1,5 +1,23 @@
 # Avances del Proyecto
 
+## 2025-06-29 - Ticket: Landing orientada a captar propietarios
+
+### Resumen
+- Se creó el ticket TICKET-001 en `tickets.json` para rediseñar la Home y orientarla a captar propietarios.
+- La prioridad es crítica porque el negocio inmobiliario depende primero de conseguir propiedades para comercializar.
+
+### Alcance de TICKET-001
+- Rediseñar `Home.tsx` con Hero principal claro: "Vendé o alquilá tu propiedad en CABA con atención personalizada y tecnología".
+- Botones principales: Solicitar Tasación y WhatsApp.
+- Sección de 4 beneficios: Tasación Profesional, Fotografías de Alta Calidad, Máxima Difusión, Acompañamiento Personalizado.
+- Sección "¿Por qué elegirnos?" enfocada en confianza.
+- Sección "Claudia" con foto profesional y botón de contacto.
+- CTA final con formulario de tasación sin cargo.
+- Requisitos técnicos: responsive, SEO, Open Graph, Schema.org LocalBusiness, Lighthouse Performance > 90 y SEO > 95.
+
+### Estado
+- Pendiente de implementación.
+
 ## 2025-06-26 - Gestión de fotos de propiedades en panel Admin (dev + producción)
 
 ### Resumen
