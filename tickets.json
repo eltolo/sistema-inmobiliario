@@ -212,7 +212,8 @@
     "notas": [
       "Testeado en dev local: set cover, upload y delete funcionan correctamente",
       "Deployado a produccion en Hostinger y verificado: modal carga fotos, portada cambia, upload y delete aplican en el servidor",
-      "La portada queda registrada en cover.txt dentro de la carpeta de la propiedad"
+      "La portada queda registrada en cover.txt dentro de la carpeta de la propiedad",
+      "Fix post-deploy: FICHAS_DIR en server.js apuntaba a una ruta incorrecta en desarrollo (fichas/fichas en vez de fichas/), lo que provocaba 'No se pudieron cargar las fotos' al abrir el gestor de fotos. Se corrigió detectando la ubicación por config.json."
     ]
   },
   {

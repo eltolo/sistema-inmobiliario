@@ -38,6 +38,12 @@
 - `zip_site.py` ahora incluye la carpeta `fichas/` en el ZIP de deploy, para que el admin de producción acceda a las imágenes origen.
 - `server.js` detecta automáticamente si `fichas/` está en `__dirname/../fichas` (dev) o `__dirname/fichas` (producción).
 
+### Fix post-deploy 2025-06-30
+- Bug detectado: en desarrollo local, al abrir "Gestionar fotos" en el admin aparecía el mensaje "No se pudieron cargar las fotos".
+- Causa: la detección de `FICHAS_DIR` en `server.js` apuntaba a `fichas/fichas` en lugar de la carpeta `fichas/` correcta.
+- Solución: se cambió la lógica para detectar la ubicación real validando la existencia de `config.json` en la ruta hermana o anidada.
+- Verificación: `GET /api/property/Arenales_2000/photos` ahora devuelve las fotos correctamente.
+
 ### Deploy y verificación
 - Tests en local: `http://localhost:5173/admin` — se cambió portada, se subió una imagen de prueba y se eliminó. Se corrió `update_web.py` y se verificó que la portada se refleja en `properties.json`.
 - Build en `fichas/web-propiedades`: exitoso, sitemap con 20 URLs.
