@@ -12,10 +12,14 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-// En dev, fichas/ está al lado de web-propiedades. En prod, fichas/ se despliega dentro de nodejs/.
-const FICHAS_DIR = fs.existsSync(path.resolve(__dirname, '..', 'fichas'))
-  ? path.resolve(__dirname, '..', 'fichas')
-  : path.resolve(__dirname, 'fichas');
+// En dev, fichas/ es el directorio padre de web-propiedades. En prod, fichas/ se despliega dentro de web-propiedades/.
+const FICHAS_DIR = (() => {
+  const sibling = path.resolve(__dirname, '..');
+  const nested = path.resolve(__dirname, 'fichas');
+  if (fs.existsSync(path.join(sibling, 'config.json'))) return sibling;
+  if (fs.existsSync(path.join(nested, 'config.json'))) return nested;
+  return nested;
+})();
 const BASE_DIR = FICHAS_DIR;
 const DIST_DIR = path.join(__dirname, 'dist');
 const SHOULD_SERVE_DIST = process.env.NODE_ENV === 'production' || ['1', 'true', 'yes'].includes((process.env.SERVE_DIST || '').toLowerCase());
