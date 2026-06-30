@@ -62,9 +62,9 @@ const Contact: React.FC<ContactProps> = ({ config }) => {
         </h2>
 
         <div className="w-full flex flex-col gap-4 mb-12">
-          <ContactCard label="CON CARINA" phone={config.whatsapp} />
+          <ContactCard label="WhatsApp" phone={config.whatsapp} />
           {config.whatsapp_claudia && (
-            <ContactCard label="O CLAUDIA" phone={config.whatsapp_claudia} />
+            <ContactCard label="WhatsApp" phone={config.whatsapp_claudia} />
           )}
         </div>
 
