@@ -195,48 +195,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Claudia */}
-      <section className="py-24 bg-zinc-900 border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeIn(0)} className="order-2 lg:order-1 relative">
-              <div className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden border border-white/5 bg-zinc-800">
-                <img
-                  src="/images/claudia.jpg"
-                  alt="Claudia - Quintana Servicios Inmobiliarios"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = '<div class="flex items-center justify-center h-full text-white/30 text-sm uppercase tracking-widest">Foto de Claudia</div>';
-                    }
-                  }}
-                />
-              </div>
-            </motion.div>
-            <motion.div {...fadeIn(0.2)} className="order-1 lg:order-2">
-              <span className="text-amber-500 text-xs uppercase tracking-[0.3em] font-bold">Tu contacto</span>
-              <h2 className="text-3xl sm:text-4xl font-serif text-white mt-4 mb-6">Hola, soy Claudia.</h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Nuestro compromiso es acompañarte durante todo el proceso de compra, venta o alquiler para que tomes decisiones con tranquilidad.
-              </p>
-              <a
-                href={whatsappLink('Hola Claudia, quiero hablar sobre una propiedad.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform"
-              >
-                <Phone size={20} />
-                Hablar con Claudia
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Propiedades */}
       <section id="propiedades" className="py-24 bg-zinc-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
