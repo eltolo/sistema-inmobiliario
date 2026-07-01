@@ -222,15 +222,17 @@
     "criticidad": "critica",
     "esfuerzo": "alto",
     "impacto": "alto",
-    "estado": "pendiente",
+    "estado": "en progreso",
     "detalle": "Transformar la Home para que el visitante entienda en menos de 5 segundos qué hace la inmobiliaria, en qué zona trabaja, cómo contactar rápidamente y por qué confiar en Quintana. El negocio inmobiliario comienza consiguiendo propiedades para comercializar, por lo que la página debe atraer propietarios.",
-    "cambios": "Home.tsx: rediseñar Hero con título 'Vendé o alquilá tu propiedad en CABA con atención personalizada y tecnología', subtítulo, botones 'Solicitar Tasación' y 'WhatsApp'. Agregar sección de 4 beneficios (Tasación Profesional, Fotografías de Alta Calidad, Máxima Difusión, Acompañamiento Personalizado). Sección '¿Por qué elegirnos?' con checklist de confianza. Sección 'Claudia' con foto profesional, texto y botón 'Hablar con Claudia'. CTA final con formulario de tasación. SEO: meta tags, Open Graph y Schema.org LocalBusiness.",
+    "cambios": "Home.tsx: Hero con título 'Vendé o alquilá tu propiedad en CABA con atención personalizada y tecnología', subtítulo, botones 'Solicitar Tasación' y 'WhatsApp'. Sección de 4 beneficios (Tasación Profesional, Fotografías de Alta Calidad, Máxima Difusión, Acompañamiento Personalizado). Sección '¿Por qué elegirnos?' con checklist de confianza. CTA final con formulario de tasación que abre WhatsApp. Propiedades destacadas con filtros. SEO: meta tags, Open Graph y Schema.org LocalBusiness. App.tsx: ruta raíz usa el nuevo componente Home. Contact.tsx: etiquetas de WhatsApp genéricas hasta tener permiso de fotos/nombres. Sección 'Claudia' oculta temporalmente.",
     "notas": [
       "El Hero debe tener CTA visible sin scroll.",
       "WhatsApp debe estar visible permanentemente.",
       "Lighthouse Performance > 90 y SEO > 95.",
       "Compatible desktop y mobile.",
-      "Imágenes comprimidas y optimizadas."
+      "Imágenes comprimidas y optimizadas.",
+      "Sección 'Claudia' y nombres 'Carina'/'Claudia' en contacto ocultos hasta tener el OK de las personas.",
+      "Build local exitoso; pendiente de Lighthouse real y deploy a producción."
     ]
   }
 ]

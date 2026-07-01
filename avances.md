@@ -1,22 +1,34 @@
 # Avances del Proyecto
 
-## 2025-06-29 - Ticket: Landing orientada a captar propietarios
+## 2025-06-29 / 2025-06-30 - Ticket: Landing orientada a captar propietarios
 
 ### Resumen
 - Se creó el ticket TICKET-001 en `tickets.json` para rediseñar la Home y orientarla a captar propietarios.
-- La prioridad es crítica porque el negocio inmobiliario depende primero de conseguir propiedades para comercializar.
+- Se implementó la primera versión de la landing en `Home.tsx` con enfoque en captar propietarios.
+- Build local exitoso y cambios subidos a GitHub.
 
-### Alcance de TICKET-001
-- Rediseñar `Home.tsx` con Hero principal claro: "Vendé o alquilá tu propiedad en CABA con atención personalizada y tecnología".
-- Botones principales: Solicitar Tasación y WhatsApp.
+### Alcance implementado
+- Hero con título "Vendé o alquilá tu propiedad en CABA con atención personalizada y tecnología".
+- Botones principales: "Solicitar Tasación" (scroll al formulario) y "WhatsApp".
 - Sección de 4 beneficios: Tasación Profesional, Fotografías de Alta Calidad, Máxima Difusión, Acompañamiento Personalizado.
-- Sección "¿Por qué elegirnos?" enfocada en confianza.
-- Sección "Claudia" con foto profesional y botón de contacto.
-- CTA final con formulario de tasación sin cargo.
-- Requisitos técnicos: responsive, SEO, Open Graph, Schema.org LocalBusiness, Lighthouse Performance > 90 y SEO > 95.
+- Sección "¿Por qué elegirnos?" con checklist de confianza.
+- Sección de propiedades destacadas con filtros de operación y categoría.
+- CTA final con formulario de tasación que abre WhatsApp con la consulta.
+- SEO: `index.html` actualizado con title, description, Open Graph y Schema.org LocalBusiness.
+- `App.tsx` ahora usa el nuevo componente `Home.tsx` en la ruta raíz.
+
+### Ajustes post-implementación
+- Sección "Claudia" oculta temporalmente hasta contar con foto y autorización.
+- En `Contact.tsx`, etiquetas "CON CARINA" y "O CLAUDIA" reemplazadas por "WhatsApp" genérico hasta tener el OK.
+
+### Pendientes antes de producción
+- Reemplazar imágenes de placeholder (`hero-bg.jpg`, `about-bg.jpg`) por fotos reales y optimizadas.
+- Medir Lighthouse Performance > 90 y SEO > 95.
+- Definir si el formulario de tasación se envía solo por WhatsApp o se agrega un backend de leads.
+- Deployar a producción en Hostinger.
 
 ### Estado
-- Pendiente de implementación.
+- En progreso.
 
 ## 2025-06-26 - Gestión de fotos de propiedades en panel Admin (dev + producción)
 
