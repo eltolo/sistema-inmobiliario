@@ -538,5 +538,19 @@
       "Incluye riesgos legales/técnicos.",
       "Propone MVP realista."
     ]
+  },
+  {
+    "id": "DECISION-001",
+    "titulo": "Revision completa de la comunicacion comercial",
+    "descripcion": "Definir la nueva propuesta de valor, CTAs, promesas y tono de comunicacion de la landing y todos los canales de captacion. Bloquea CONV-001, LEAD-002, UX-001 y cualquier otro ticket que mencione tasacion sin cargo hasta su aprobacion.",
+    "estado": "en progreso",
+    "prioridad": "maxima",
+    "categoria": "negocio",
+    "fecha": "2026-06-30",
+    "dependencias": [],
+    "notas": [
+      "Ticket creado para documentar y aprobar la nueva estrategia comercial antes de continuar implementaciones.",
+      "Afecta a: Home, CTA, Landing, Tasacion, WhatsApp flotante, navegacion."
+    ]
   }
 ]

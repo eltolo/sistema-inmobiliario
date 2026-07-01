@@ -88,7 +88,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-zinc-950/60" />
           <img
-            src="/images/hero-bg.jpg"
+            src="/properties/Arenales_2000/images/01_frente_01.jpg"
             alt="Propiedades en CABA"
             className="w-full h-full object-cover opacity-40"
             loading="eager"
@@ -175,8 +175,8 @@ export default function Home() {
             </motion.div>
             <motion.div {...fadeIn(0.2)} className="relative rounded-2xl overflow-hidden border border-white/5 aspect-[4/3]">
               <img
-                src="/images/about-bg.jpg"
-                alt="Inmobiliaria Quintana"
+                src="/multimedia/Oficinas_Quintana.jpg"
+                alt="Oficinas Quintana CABA Propiedades"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
