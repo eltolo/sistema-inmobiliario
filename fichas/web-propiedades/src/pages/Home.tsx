@@ -70,7 +70,7 @@ export default function Home() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hola, soy ${form.name}. Quiero solicitar una tasación sin cargo.\nTeléfono: ${form.phone}\nDirección: ${form.address}\n${form.message}`;
+    const text = `Hola, soy ${form.name}. Quiero solicitar una evaluación comercial integral para mi propiedad.\nTeléfono: ${form.phone}\nDirección: ${form.address}\n${form.message}`;
     window.open(whatsappLink(text), '_blank');
     setFormStatus('sent');
   };
@@ -104,7 +104,7 @@ export default function Home() {
               Vendé o alquilá tu propiedad en CABA con acompañamiento profesional.
             </h1>
             <p className="text-lg sm:text-xl text-white/70 mb-8 leading-relaxed max-w-2xl">
-              Atención personalizada, tasación sin cargo, publicación en los principales portales, fotografía de calidad, difusión en redes sociales y seguimiento hasta el cierre de la operación.
+              Atención personalizada, evaluación comercial integral, publicación en los principales portales, fotografía de calidad, difusión en redes sociales y seguimiento hasta el cierre de la operación.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -112,7 +112,7 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-2 bg-amber-500 text-black px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-amber-400 transition-all"
               >
                 <Calendar size={20} />
-                Solicitar Tasación
+                Solicitar Asesoramiento
               </a>
               <a
                 href="#propiedades"
@@ -131,7 +131,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: HomeIcon, title: 'Tasación Profesional', desc: 'Precio realista según el mercado actual.' },
+              { icon: HomeIcon, title: 'Evaluación Comercial Integral', desc: 'Precio realista según el mercado actual y análisis profesional.' },
               { icon: Camera, title: 'Fotografías de Alta Calidad', desc: 'Imágenes que destacan el valor de tu propiedad.' },
               { icon: ArrowRight, title: 'Máxima Difusión', desc: 'Publicación en portales y redes sociales.' },
               { icon: Handshake, title: 'Acompañamiento Personalizado', desc: 'Te acompañamos hasta el cierre de la operación.' },
@@ -328,12 +328,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Final - Tasación */}
+      {/* CTA Final - Asesoramiento */}
       <section id="tasacion" className="py-24 bg-zinc-900 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeIn(0)} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-serif text-white mb-4">¿Querés conocer el valor actual de tu propiedad?</h2>
-            <p className="text-white/60 text-lg">Solicitá una tasación sin cargo.</p>
+            <h2 className="text-3xl sm:text-4xl font-serif text-white mb-4">¿Querés vender o alquilar tu propiedad en CABA?</h2>
+            <p className="text-white/60 text-lg">Solicitá una evaluación comercial integral sin cargo.</p>
           </motion.div>
 
           <motion.form {...fadeIn(0.1)} onSubmit={handleFormSubmit} className="bg-zinc-950 border border-white/5 rounded-2xl p-8 sm:p-12">
@@ -343,7 +343,7 @@ export default function Home() {
                   <Phone size={32} />
                 </div>
                 <h3 className="text-2xl font-serif text-white mb-2">¡Solicitud enviada!</h3>
-                <p className="text-white/60 mb-6">Te contactaremos a la brevedad para coordinar la tasación.</p>
+                <p className="text-white/60 mb-6">Te contactaremos a la brevedad para coordinar el asesoramiento.</p>
                 <button
                   type="button"
                   onClick={() => setFormStatus('idle')}
@@ -403,7 +403,7 @@ export default function Home() {
                     className="w-full bg-amber-500 text-black px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-amber-400 transition-all flex items-center justify-center gap-2"
                   >
                     <Mail size={20} />
-                    Solicitar Tasación
+                    Solicitar Asesoramiento
                   </button>
                   <p className="text-white/30 text-xs text-center mt-4">
                     Al enviar, te abriremos WhatsApp para completar la solicitud.

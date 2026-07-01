@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ whatsapp, propertyName }) => {
   const msg = propertyName
     ? `Hola, te contacto por ${propertyName}`
-    : 'Hola, quiero conocer el valor de mi propiedad en CABA. ¿Me pueden asesorar?';
+    : 'Hola, quiero solicitar una evaluación comercial integral para mi propiedad en CABA. ¿Me pueden asesorar?';
   return (
     <a
       href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`}

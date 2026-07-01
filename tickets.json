@@ -276,32 +276,33 @@
     "impacto": "alto",
     "estado": "en revision por chatgpt",
     "objetivo": "Convertir la home en una página que capte propietarios interesados en vender o alquilar su propiedad en CABA.",
-    "contexto": "El sitio ya muestra propiedades, pero la prioridad comercial es captar propiedades. La home debe explicar en menos de 5 segundos qué hace Quintana y cómo pedir una tasación.",
+    "contexto": "El sitio ya muestra propiedades, pero la prioridad comercial es captar propiedades. La home debe explicar en menos de 5 segundos qué hace Quintana y cómo solicitar una evaluación comercial integral / asesoramiento.",
     "instrucciones": [
       "Revisar el estado actual de TICKET-001 antes de modificar.",
       "Hero principal: 'Vendé o alquilá tu propiedad en CABA con acompañamiento profesional'.",
-      "Subtítulo: mencionar atención personalizada, tasación, publicación, difusión y seguimiento.",
-      "Agregar CTA primario: 'Solicitar tasación'.",
+      "Subtítulo: mencionar atención personalizada, evaluación comercial integral, publicación, difusión y seguimiento.",
+      "Agregar CTA primario: 'Solicitar asesoramiento'.",
       "Agregar CTA secundario: 'Ver propiedades'.",
-      "Agregar botón flotante de WhatsApp con texto prearmado para tasación.",
-      "Agregar sección de beneficios: Tasación, Fotos, Difusión, Seguimiento.",
+      "Agregar botón flotante de WhatsApp con texto prearmado para evaluación comercial integral.",
+      "Agregar sección de beneficios: Evaluación Comercial Integral, Fotos, Difusión, Seguimiento.",
       "Agregar sección de equipo con enfoque institucional, sin sobreexponer a Claudia.",
       "Mantener propiedades destacadas más abajo de la página.",
       "Verificar mobile primero."
     ],
     "criterios_aceptacion": [
-      "El CTA 'Solicitar tasación' se ve sin hacer scroll en desktop y mobile.",
+      "El CTA 'Solicitar asesoramiento' se ve sin hacer scroll en desktop y mobile.",
       "El WhatsApp flotante funciona.",
-      "El mensaje prearmado de WhatsApp dice que el usuario quiere conocer el valor de su propiedad.",
+      "El mensaje prearmado de WhatsApp dice que el usuario quiere solicitar una evaluación comercial integral.",
       "La home no parece un catálogo puro de propiedades.",
       "La marca visible principal es Quintana CABA Propiedades.",
       "Build local exitoso."
     ],
     "notas": [
       "Hero actualizado con titulo y subtitulo segun CONV-001.",
-      "CTA primario Solicitar tasacion visible sin scroll.",
+      "CTA primario 'Solicitar asesoramiento' visible sin scroll.",
       "CTA secundario Ver propiedades enlaza a seccion de propiedades.",
-      "WhatsApp flotante con mensaje prearmado para conocer el valor de la propiedad.",
+      "WhatsApp flotante con mensaje prearmado para solicitar evaluación comercial integral.",
+      "SEO actualizado: se conservan keywords 'tasación' pero la descripción comunica evaluación comercial integral.",
       "Seccion de equipo agregada con enfoque institucional, sin fotos ni nombres personales.",
       "Seccion de propiedades se mantuvo debajo del equipo.",
       "Build local exitoso."
@@ -309,29 +310,33 @@
   },
   {
     "id": "LEAD-002",
-    "titulo": "Crear página /tasacion con formulario de captación",
+    "titulo": "Crear pagina /tasacion con formulario de asesoramiento",
     "criticidad": "critica",
     "esfuerzo": "medio",
     "impacto": "alto",
-    "estado": "pendiente",
+    "estado": "en revision por chatgpt",
     "objetivo": "Crear una página específica para captar propietarios que quieran vender o alquilar.",
-    "contexto": "La tasación es el punto de entrada más importante para conseguir propiedades. No debe ser un formulario genérico de contacto.",
+    "contexto": "El asesoramiento y la evaluacion comercial integral son el punto de entrada mas importante para conseguir propiedades. No debe ser un formulario generico de contacto. Se mantiene la ruta /tasacion por SEO, pero la pagina comunica asesoramiento profesional.",
     "instrucciones": [
-      "Crear ruta /tasacion.",
-      "Título sugerido: 'Conocé el valor de tu propiedad en CABA'.",
-      "Formulario con campos: nombre, WhatsApp, email opcional, barrio, tipo de propiedad, operación, ambientes, metros aproximados, mensaje.",
+      "Crear ruta /tasacion (se mantiene por intencion de busqueda).",
+      "Titulo sugerido: Conocé el valor de tu propiedad en CABA con una evaluacion comercial integral.",
+      "Formulario con campos: nombre, WhatsApp, email opcional, barrio, tipo de propiedad, operacion, ambientes, metros aproximados, mensaje.",
       "Al enviar, guardar el lead si existe backend disponible; si no, abrir WhatsApp con mensaje estructurado.",
-      "Agregar texto de confianza: 'Una tasación correcta ayuda a vender mejor y evitar meses de publicación sin resultados'.",
-      "Agregar aviso: 'El valor final requiere revisión profesional del equipo Quintana'.",
-      "No prometer valuaciones automáticas exactas."
+      "Agregar texto de confianza: Una evaluacion comercial correcta ayuda a vender mejor y evitar meses de publicacion sin resultados.",
+      "Agregar aviso: El valor final requiere revision profesional del equipo Quintana.",
+      "No prometer valuaciones automaticas exactas.",
+      "El lenguaje debe ser asesoramiento / evaluacion comercial integral, no tasacion sin cargo."
     ],
     "criterios_aceptacion": [
       "La ruta /tasacion carga correctamente.",
       "Formulario usable en mobile.",
       "No se pierden datos al enviar.",
       "WhatsApp recibe un mensaje completo y ordenado.",
-      "La página tiene meta title y meta description.",
-      "El CTA hacia /tasacion está enlazado desde la home."
+      "La pagina tiene meta title y meta description con keywords tasacion.",
+      "El CTA hacia /tasacion esta enlazado desde la home y comunica asesoramiento."
+    ],
+    "notas": [
+      "Actualizado segun DECISION-001: se mantiene /tasacion por SEO, pero el formulario se comunica como asesoramiento / evaluacion comercial integral."
     ]
   },
   {
@@ -421,23 +426,27 @@
     "criticidad": "alta",
     "esfuerzo": "bajo",
     "impacto": "alto",
-    "estado": "pendiente",
+    "estado": "en revision por chatgpt",
     "objetivo": "Hacer que el usuario encuentre rápido las acciones comerciales importantes.",
     "contexto": "El sitio debe servir a compradores, pero sobre todo debe captar propietarios.",
     "instrucciones": [
-      "Revisar menú actual.",
-      "Agregar entradas: Comprar, Alquilar, Tasación, Nosotros, Contacto.",
-      "El CTA principal del header debe ser 'Solicitar tasación'.",
-      "En mobile, el CTA debe ser visible y fácil de tocar.",
-      "El botón de WhatsApp debe mantenerse flotante.",
-      "En páginas de propiedad, agregar CTA: 'Consultar por esta propiedad'."
+      "Revisar menu actual.",
+      "Agregar entradas: Propiedades, Asesoramiento, Nosotros, Contacto.",
+      "El CTA principal del header debe ser Solicitar asesoramiento.",
+      "En mobile, el CTA debe ser visible y facil de tocar.",
+      "El boton de WhatsApp debe mantenerse flotante.",
+      "En paginas de propiedad, agregar CTA: Consultar por esta propiedad."
     ],
     "criterios_aceptacion": [
       "Menú claro en desktop.",
       "Menú claro en mobile.",
-      "Tasación tiene presencia prioritaria.",
+      "Asesoramiento / evaluación comercial integral tiene presencia prioritaria.",
       "No hay más de un CTA principal compitiendo en el header.",
       "WhatsApp funciona desde todas las páginas."
+    ],
+    "notas": [
+      "Actualizado segun DECISION-001: se agrega menu Asesoramiento y CTA Solicitar asesoramiento en Navbar.",
+      "Se conserva /#tasacion como destino del CTA por SEO."
     ]
   },
   {
@@ -543,14 +552,13 @@
     "id": "DECISION-001",
     "titulo": "Revision completa de la comunicacion comercial",
     "descripcion": "Definir la nueva propuesta de valor, CTAs, promesas y tono de comunicacion de la landing y todos los canales de captacion. Bloquea CONV-001, LEAD-002, UX-001 y cualquier otro ticket que mencione tasacion sin cargo hasta su aprobacion.",
-    "estado": "en progreso",
+    "estado": "aprobado",
     "prioridad": "maxima",
     "categoria": "negocio",
     "fecha": "2026-06-30",
     "dependencias": [],
     "notas": [
-      "Ticket creado para documentar y aprobar la nueva estrategia comercial antes de continuar implementaciones.",
-      "Afecta a: Home, CTA, Landing, Tasacion, WhatsApp flotante, navegacion."
+      "Aprobado parcialmente el 2025-06-30: se define asesoramiento / evaluacion comercial integral como posicionamiento, se mantiene /tasacion por SEO, se actualizan LEAD-002, CONV-001 y UX-001."
     ]
   }
 ]

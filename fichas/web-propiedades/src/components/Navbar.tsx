@@ -17,11 +17,18 @@ const Navbar: React.FC<NavbarProps> = ({ config }) => {
             <span className="text-[10px] tracking-[0.3em] text-amber-500 uppercase font-sans">Servicios Inmobiliarios</span>
           </span>
         </Link>
-        <div className="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold">
+        <div className="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold">
           <Link to="/" className="hover:text-amber-500 transition-colors">Propiedades</Link>
+          <a href="/#tasacion" className="hover:text-amber-500 transition-colors">Asesoramiento</a>
           <Link to="/nosotros" className="hover:text-amber-500 transition-colors">Nosotros</Link>
           <Link to="/contacto" className="hover:text-amber-500 transition-colors">Contacto</Link>
         </div>
+        <a
+          href="/#tasacion"
+          className="inline-flex items-center gap-2 bg-amber-500 text-black px-4 py-2 rounded-full text-[10px] uppercase tracking-wider font-bold hover:bg-amber-400 transition-all"
+        >
+          Solicitar asesoramiento
+        </a>
       </div>
     </nav>
   );

@@ -2,7 +2,7 @@
 
 ## Estado
 
-- **Estado:** En progreso (a la espera de aprobación).
+- **Estado:** Aprobado en parte (2025-06-30).
 - **Bloquea:** CONV-001, LEAD-002, UX-001 y cualquier otro ticket que haga referencia a "tasación sin cargo", CTAs de Home o Landing.
 - **Fecha de creación:** 2025-06-30.
 
@@ -22,6 +22,36 @@ Este documento consolida las decisiones pendientes y la propuesta actual para qu
 6. **Equipo / personal branding:** ¿Se publican nombres y fotos de Carina y Claudia o se mantiene el enfoque institucional por ahora?
 7. **Formularios:** ¿La captación de leads se hace solo por WhatsApp o se agrega un backend de formularios (LEAD-002 / LEAD-003)?
 8. **Tono de comunicación:** ¿Más institucional, más cercano, o mixto?
+
+## Decisiones aprobadas (2025-06-30)
+
+### 1. Posicionamiento del servicio
+
+- El servicio se comunica como **"asesoramiento"** o **"evaluación comercial integral"**.
+- No se promociona como "tasación sin cargo" en la comunicación principal.
+- La propuesta de valor es: acompañamiento profesional para vender o alquilar una propiedad en CABA, que incluye evaluación comercial, publicación en portales, fotografía de calidad, difusión y seguimiento hasta el cierre.
+
+### 2. LEAD-002: Formulario de Asesoramiento
+
+- El ticket `LEAD-002` cambia de nombre de **"Formulario de Tasación"** a **"Formulario de Asesoramiento"**.
+- El formulario debe captar datos del propietario y ofrecer "evaluación comercial integral" en lugar de "tasación sin cargo".
+
+### 3. SEO: conservar la palabra "tasación"
+
+- Se mantienen las keywords "tasación departamento", "tasación inmueble", "tasación CABA", etc., en `index.html` y contenido SEO.
+- La página responde a esas búsquedas con la propuesta de valor de Quintana: **"En Quintana realizamos una evaluación comercial integral..."**.
+- Se captura la intención de búsqueda pero se comunica el servicio con el posicionamiento institucional.
+
+### 4. CTAs: todos deben revisarse
+
+- El CTA primario actual **"Solicitar tasación"** debe cambiar a un texto alineado con "asesoramiento" o "evaluación comercial".
+- El CTA secundario **"Ver propiedades"** puede mantenerse mientras se revisa la navegación completa (UX-001).
+- El mensaje del botón flotante de WhatsApp debe dejar de centrarse en "tasación" y pasar a "evaluación comercial" o "asesoramiento".
+- La navegación (UX-001) debe reflejar el nuevo posicionamiento.
+
+### 5. Equipo
+
+- Se mantiene el enfoque institucional por ahora: sin nombres ni fotos personales hasta autorización explícita.
 
 ## Propuesta actual (para aprobación)
 
