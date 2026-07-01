@@ -241,7 +241,7 @@
     "criticidad": "alta",
     "esfuerzo": "bajo",
     "impacto": "alto",
-    "estado": "pendiente",
+    "estado": "completado",
     "objetivo": "Dejar documentada la estrategia del proyecto, roles y reglas de comunicación para evitar ambigüedades futuras.",
     "contexto": "El proyecto debe fortalecer la marca Quintana CABA Propiedades. Carina es la dueña/referente institucional. Claudia debe crecer como asesora clave dentro del equipo, sin desplazar la imagen institucional de Carina.",
     "instrucciones": [
@@ -259,6 +259,13 @@
       "Los documentos posicionan a Claudia como asesora clave del equipo.",
       "No hay textos que puedan interpretarse como reemplazo de Carina por Claudia.",
       "Los documentos pueden ser leídos por una IA programadora antes de tocar código."
+    ],
+    "notas": [
+      "Creados en Docs/ (Windows case-insensitive).",
+      "00_MASTER_PLAN_QUINTANA.md: vision, roles, principios, objetivos, roadmap, KPIs, regla de oro.",
+      "01_NORTE.md: proposito, prioridad de negocio, criterios de decision, promesa de marca, publicos objetivo, experiencia ideal.",
+      "02_ROLES_Y_COMUNICACION.md: definicion de roles, reglas de comunicacion publica, CTAs institucionales, aplicacion en web y admin.",
+      "Se elimino el archivo Docs/MASTER_PLAN_QUINTANA.md anterior para evitar duplicacion."
     ]
   },
   {
