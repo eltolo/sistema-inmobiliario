@@ -222,7 +222,7 @@
     "criticidad": "critica",
     "esfuerzo": "alto",
     "impacto": "alto",
-    "estado": "en progreso",
+    "estado": "en revision por chatgpt",
     "detalle": "Transformar la Home para que el visitante entienda en menos de 5 segundos qué hace la inmobiliaria, en qué zona trabaja, cómo contactar rápidamente y por qué confiar en Quintana. El negocio inmobiliario comienza consiguiendo propiedades para comercializar, por lo que la página debe atraer propietarios.",
     "cambios": "Home.tsx: Hero con título 'Vendé o alquilá tu propiedad en CABA con atención personalizada y tecnología', subtítulo, botones 'Solicitar Tasación' y 'WhatsApp'. Sección de 4 beneficios (Tasación Profesional, Fotografías de Alta Calidad, Máxima Difusión, Acompañamiento Personalizado). Sección '¿Por qué elegirnos?' con checklist de confianza. CTA final con formulario de tasación que abre WhatsApp. Propiedades destacadas con filtros. SEO: meta tags, Open Graph y Schema.org LocalBusiness. App.tsx: ruta raíz usa el nuevo componente Home. Contact.tsx: etiquetas de WhatsApp genéricas hasta tener permiso de fotos/nombres. Sección 'Claudia' oculta temporalmente.",
     "notas": [
@@ -241,7 +241,7 @@
     "criticidad": "alta",
     "esfuerzo": "bajo",
     "impacto": "alto",
-    "estado": "completado",
+    "estado": "en revision por chatgpt",
     "objetivo": "Dejar documentada la estrategia del proyecto, roles y reglas de comunicación para evitar ambigüedades futuras.",
     "contexto": "El proyecto debe fortalecer la marca Quintana CABA Propiedades. Carina es la dueña/referente institucional. Claudia debe crecer como asesora clave dentro del equipo, sin desplazar la imagen institucional de Carina.",
     "instrucciones": [
@@ -274,7 +274,7 @@
     "criticidad": "critica",
     "esfuerzo": "medio",
     "impacto": "alto",
-    "estado": "completado",
+    "estado": "en revision por chatgpt",
     "objetivo": "Convertir la home en una página que capte propietarios interesados en vender o alquilar su propiedad en CABA.",
     "contexto": "El sitio ya muestra propiedades, pero la prioridad comercial es captar propiedades. La home debe explicar en menos de 5 segundos qué hace Quintana y cómo pedir una tasación.",
     "instrucciones": [
