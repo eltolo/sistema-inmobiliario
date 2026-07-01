@@ -15,6 +15,7 @@ secrets.json
 # Logs y datos de ejecución
 logs/
 *.log
+lighthouse-report*.json
 
 # Backups y archivos temporales
 backups/
