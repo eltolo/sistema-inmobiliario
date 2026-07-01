@@ -1,5 +1,40 @@
 # Avances del Proyecto
 
+## 2025-06-30 - Ticket: CONV-001 Completar landing principal orientada a captación de propietarios
+
+### Resumen
+- Se implementaron los ajustes de CONV-001 en `Home.tsx` para enfocar la landing en la captación de propietarios.
+- Se actualizó el mensaje del botón flotante de WhatsApp para captar consultas de tasación.
+- Se agregó una sección institucional de equipo sin fotos ni nombres personales.
+- Build local exitoso y cambios subidos a GitHub.
+
+### Alcance implementado
+- Hero con título "Vendé o alquilá tu propiedad en CABA con acompañamiento profesional".
+- Subtítulo que incluye atención personalizada, tasación sin cargo, publicación en portales, fotografía de calidad, difusión en redes sociales y seguimiento hasta el cierre.
+- CTA primario "Solicitar Tasación" visible sin scroll en desktop y mobile.
+- CTA secundario "Ver propiedades" que enlaza a la sección de propiedades destacadas.
+- Botón flotante de WhatsApp con mensaje prearmado: "Hola, quiero conocer el valor de mi propiedad en CABA. ¿Me pueden asesorar?".
+- Sección de beneficios: Tasación Profesional, Fotografías de Alta Calidad, Máxima Difusión, Acompañamiento Personalizado.
+- Sección "¿Por qué elegirnos?" con checklist de confianza.
+- Sección "Nuestro equipo" con enfoque institucional: Directora (Referente institucional) y Asesora inmobiliaria (Acompañamiento comercial). Sin fotos ni nombres personales hasta tener autorización.
+- Sección de propiedades destacadas se mantuvo más abajo de la página, después del equipo.
+- Diseño responsive: mobile first.
+
+### Archivos modificados
+- `fichas/web-propiedades/src/pages/Home.tsx`
+- `fichas/web-propiedades/src/components/WhatsAppButton.tsx`
+- `tickets.json` (CONV-001 marcado como completado)
+
+### Pendientes antes de producción
+- Reemplazar imágenes de placeholder (`hero-bg.jpg`, `about-bg.jpg`) por fotos reales y optimizadas.
+- Medir Lighthouse Performance > 90 y SEO > 95.
+- Definir si el formulario de tasación se envía solo por WhatsApp o se agrega un backend de leads (LEAD-002 / LEAD-003).
+- Reordenar navegación y CTAs principales (UX-001).
+- Deployar a producción en Hostinger.
+
+### Estado
+- Completado.
+
 ## 2025-06-29 / 2025-06-30 - Ticket: Landing orientada a captar propietarios
 
 ### Resumen

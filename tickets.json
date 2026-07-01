@@ -274,7 +274,7 @@
     "criticidad": "critica",
     "esfuerzo": "medio",
     "impacto": "alto",
-    "estado": "pendiente",
+    "estado": "completado",
     "objetivo": "Convertir la home en una página que capte propietarios interesados en vender o alquilar su propiedad en CABA.",
     "contexto": "El sitio ya muestra propiedades, pero la prioridad comercial es captar propiedades. La home debe explicar en menos de 5 segundos qué hace Quintana y cómo pedir una tasación.",
     "instrucciones": [
@@ -295,6 +295,15 @@
       "El mensaje prearmado de WhatsApp dice que el usuario quiere conocer el valor de su propiedad.",
       "La home no parece un catálogo puro de propiedades.",
       "La marca visible principal es Quintana CABA Propiedades.",
+      "Build local exitoso."
+    ],
+    "notas": [
+      "Hero actualizado con titulo y subtitulo segun CONV-001.",
+      "CTA primario Solicitar tasacion visible sin scroll.",
+      "CTA secundario Ver propiedades enlaza a seccion de propiedades.",
+      "WhatsApp flotante con mensaje prearmado para conocer el valor de la propiedad.",
+      "Seccion de equipo agregada con enfoque institucional, sin fotos ni nombres personales.",
+      "Seccion de propiedades se mantuvo debajo del equipo.",
       "Build local exitoso."
     ]
   },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, Calendar, Camera, Handshake, CheckCircle, ArrowRight, Home as HomeIcon, MapPin, Mail } from 'lucide-react';
+import { Phone, Calendar, Camera, Handshake, CheckCircle, ArrowRight, Home as HomeIcon, MapPin, Mail, Users } from 'lucide-react';
 import webDataRaw from '../data/properties.json';
 import { WebData } from '../types/property';
 import { thumbUrl } from '../lib/utils';
@@ -101,10 +101,10 @@ export default function Home() {
               Quintana Servicios Inmobiliarios
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
-              Vendé o alquilá tu propiedad en CABA con atención personalizada y tecnología.
+              Vendé o alquilá tu propiedad en CABA con acompañamiento profesional.
             </h1>
             <p className="text-lg sm:text-xl text-white/70 mb-8 leading-relaxed max-w-2xl">
-              En Quintana acompañamos todo el proceso: tasación profesional, publicación en los principales portales, fotografía de calidad, difusión en redes sociales y seguimiento personalizado hasta el cierre de la operación.
+              Atención personalizada, tasación sin cargo, publicación en los principales portales, fotografía de calidad, difusión en redes sociales y seguimiento hasta el cierre de la operación.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -115,13 +115,11 @@ export default function Home() {
                 Solicitar Tasación
               </a>
               <a
-                href={whatsappLink('Hola, quiero vender/alquilar una propiedad en CABA. ¿Me pueden asesorar?')}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#propiedades"
                 className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-white/10 transition-all"
               >
-                <Phone size={20} />
-                WhatsApp
+                <HomeIcon size={20} />
+                Ver propiedades
               </a>
             </div>
           </motion.div>
@@ -191,6 +189,61 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Equipo */}
+      <section className="py-24 bg-zinc-900 border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...fadeIn(0)} className="text-center mb-16">
+            <span className="text-amber-500 text-xs uppercase tracking-[0.3em] font-bold">Equipo</span>
+            <h2 className="text-3xl sm:text-4xl font-serif text-white mt-4 mb-4">Nuestro equipo</h2>
+            <p className="text-white/50 max-w-2xl mx-auto">
+              Profesionales que acompañan cada operación con respaldo, experiencia y atención personalizada.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+            {[
+              {
+                role: 'Directora',
+                title: 'Referente institucional',
+                desc: 'Lidera la estrategia comercial y la imagen de Quintana CABA Propiedades.',
+              },
+              {
+                role: 'Asesora inmobiliaria',
+                title: 'Acompañamiento comercial',
+                desc: 'Captación, seguimiento de propiedades y atención a compradores e inquilinos.',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.role}
+                {...fadeIn(i * 0.1)}
+                className="bg-zinc-950 border border-white/5 rounded-2xl p-8 flex items-start gap-6"
+              >
+                <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center shrink-0 text-amber-500">
+                  <Users size={28} />
+                </div>
+                <div>
+                  <span className="text-amber-500 text-xs uppercase tracking-widest font-bold">{item.title}</span>
+                  <h3 className="text-white font-serif text-xl mt-1 mb-2">{item.role}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href={whatsappLink('Hola, quiero contactar al equipo de Quintana para una consulta.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform"
+            >
+              <Phone size={20} />
+              Contactar al equipo
+            </a>
           </div>
         </div>
       </section>
