@@ -234,5 +234,293 @@
       "Sección 'Claudia' y nombres 'Carina'/'Claudia' en contacto ocultos hasta tener el OK de las personas.",
       "Build local exitoso; pendiente de Lighthouse real y deploy a producción."
     ]
+  },
+  {
+    "id": "GOV-001",
+    "titulo": "Crear documentos base del proyecto Quintana",
+    "criticidad": "alta",
+    "esfuerzo": "bajo",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Dejar documentada la estrategia del proyecto, roles y reglas de comunicación para evitar ambigüedades futuras.",
+    "contexto": "El proyecto debe fortalecer la marca Quintana CABA Propiedades. Carina es la dueña/referente institucional. Claudia debe crecer como asesora clave dentro del equipo, sin desplazar la imagen institucional de Carina.",
+    "instrucciones": [
+      "Crear carpeta docs/ si no existe.",
+      "Crear docs/00_MASTER_PLAN_QUINTANA.md.",
+      "Crear docs/01_NORTE.md.",
+      "Crear docs/02_ROLES_Y_COMUNICACION.md.",
+      "Incluir explícitamente la regla: la comunicación pública debe fortalecer a Quintana como marca/equipo.",
+      "No crear secciones donde Claudia aparezca como única cara de la inmobiliaria.",
+      "Usar lenguaje institucional: equipo, asesoramiento, acompañamiento, respaldo."
+    ],
+    "criterios_aceptacion": [
+      "Existe carpeta docs/ con los 3 documentos.",
+      "Los documentos mencionan a Carina como referente institucional.",
+      "Los documentos posicionan a Claudia como asesora clave del equipo.",
+      "No hay textos que puedan interpretarse como reemplazo de Carina por Claudia.",
+      "Los documentos pueden ser leídos por una IA programadora antes de tocar código."
+    ]
+  },
+  {
+    "id": "CONV-001",
+    "titulo": "Completar landing principal orientada a captación de propietarios",
+    "criticidad": "critica",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Convertir la home en una página que capte propietarios interesados en vender o alquilar su propiedad en CABA.",
+    "contexto": "El sitio ya muestra propiedades, pero la prioridad comercial es captar propiedades. La home debe explicar en menos de 5 segundos qué hace Quintana y cómo pedir una tasación.",
+    "instrucciones": [
+      "Revisar el estado actual de TICKET-001 antes de modificar.",
+      "Hero principal: 'Vendé o alquilá tu propiedad en CABA con acompañamiento profesional'.",
+      "Subtítulo: mencionar atención personalizada, tasación, publicación, difusión y seguimiento.",
+      "Agregar CTA primario: 'Solicitar tasación'.",
+      "Agregar CTA secundario: 'Ver propiedades'.",
+      "Agregar botón flotante de WhatsApp con texto prearmado para tasación.",
+      "Agregar sección de beneficios: Tasación, Fotos, Difusión, Seguimiento.",
+      "Agregar sección de equipo con enfoque institucional, sin sobreexponer a Claudia.",
+      "Mantener propiedades destacadas más abajo de la página.",
+      "Verificar mobile primero."
+    ],
+    "criterios_aceptacion": [
+      "El CTA 'Solicitar tasación' se ve sin hacer scroll en desktop y mobile.",
+      "El WhatsApp flotante funciona.",
+      "El mensaje prearmado de WhatsApp dice que el usuario quiere conocer el valor de su propiedad.",
+      "La home no parece un catálogo puro de propiedades.",
+      "La marca visible principal es Quintana CABA Propiedades.",
+      "Build local exitoso."
+    ]
+  },
+  {
+    "id": "LEAD-002",
+    "titulo": "Crear página /tasacion con formulario de captación",
+    "criticidad": "critica",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Crear una página específica para captar propietarios que quieran vender o alquilar.",
+    "contexto": "La tasación es el punto de entrada más importante para conseguir propiedades. No debe ser un formulario genérico de contacto.",
+    "instrucciones": [
+      "Crear ruta /tasacion.",
+      "Título sugerido: 'Conocé el valor de tu propiedad en CABA'.",
+      "Formulario con campos: nombre, WhatsApp, email opcional, barrio, tipo de propiedad, operación, ambientes, metros aproximados, mensaje.",
+      "Al enviar, guardar el lead si existe backend disponible; si no, abrir WhatsApp con mensaje estructurado.",
+      "Agregar texto de confianza: 'Una tasación correcta ayuda a vender mejor y evitar meses de publicación sin resultados'.",
+      "Agregar aviso: 'El valor final requiere revisión profesional del equipo Quintana'.",
+      "No prometer valuaciones automáticas exactas."
+    ],
+    "criterios_aceptacion": [
+      "La ruta /tasacion carga correctamente.",
+      "Formulario usable en mobile.",
+      "No se pierden datos al enviar.",
+      "WhatsApp recibe un mensaje completo y ordenado.",
+      "La página tiene meta title y meta description.",
+      "El CTA hacia /tasacion está enlazado desde la home."
+    ]
+  },
+  {
+    "id": "LEAD-003",
+    "titulo": "Implementar tracking mínimo de leads y clicks a WhatsApp",
+    "criticidad": "alta",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Medir cuántas consultas reales genera el sitio y desde qué página vienen.",
+    "contexto": "Sin medición no se puede saber qué funciona. Ya existe un ticket LEAD-001 para CRM liviano; este ticket apunta a un MVP más chico y rápido.",
+    "instrucciones": [
+      "Revisar LEAD-001 existente y no duplicar lógica.",
+      "Crear tabla SQLite leads si no existe.",
+      "Crear tabla whatsapp_clicks si no existe.",
+      "Registrar: fecha, página_origen, property_id opcional, tipo_consulta, nombre opcional, teléfono opcional, mensaje.",
+      "Registrar cada click a WhatsApp antes del redirect.",
+      "Agregar endpoint GET /api/admin/lead-stats para métricas básicas.",
+      "Agregar vista simple en Admin: Leads / WhatsApp."
+    ],
+    "criterios_aceptacion": [
+      "Cada click a WhatsApp queda registrado.",
+      "Cada formulario de tasación queda registrado.",
+      "El admin muestra cantidad de leads por día.",
+      "El admin muestra clicks por propiedad y por página.",
+      "No se rompen los botones de WhatsApp si falla el tracking.",
+      "La base se crea automáticamente si no existe."
+    ]
+  },
+  {
+    "id": "SEO-002",
+    "titulo": "SEO local para captación inmobiliaria en CABA",
+    "criticidad": "alta",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Optimizar el sitio para búsquedas locales relacionadas con vender, alquilar y tasar propiedades en CABA.",
+    "contexto": "SEO-001 ya implementó metadatos base. Falta orientar el SEO a captación de propietarios y búsquedas por zona.",
+    "instrucciones": [
+      "Revisar SEO-001 antes de modificar.",
+      "Agregar páginas o secciones SEO para: tasación inmobiliaria CABA, vender propiedad CABA, alquilar propiedad CABA.",
+      "Agregar H1 único por página.",
+      "Agregar meta title y meta description por página.",
+      "Actualizar sitemap.xml para incluir /tasacion, /vender, /alquilar si existen.",
+      "Agregar textos naturales, no keyword stuffing.",
+      "Agregar schema.org RealEstateAgent o LocalBusiness con datos de Quintana.",
+      "Verificar robots.txt."
+    ],
+    "criterios_aceptacion": [
+      "Cada página tiene title, description y H1 únicos.",
+      "Sitemap incluye las nuevas rutas.",
+      "No hay textos duplicados evidentes.",
+      "La home mantiene foco comercial.",
+      "El schema JSON-LD valida sin errores críticos.",
+      "Lighthouse SEO >= 95."
+    ]
+  },
+  {
+    "id": "BRAND-001",
+    "titulo": "Crear sección institucional Equipo Quintana",
+    "criticidad": "media",
+    "esfuerzo": "bajo",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Humanizar la inmobiliaria mostrando equipo y confianza, cuidando la sensibilidad de roles.",
+    "contexto": "Carina es la dueña de la inmobiliaria. Claudia se suma como pieza clave y debe ganar visibilidad profesional de forma progresiva y natural.",
+    "instrucciones": [
+      "Crear sección 'Nuestro equipo' o página /nosotros si no existe.",
+      "Texto institucional centrado en Quintana CABA Propiedades.",
+      "Carina: Directora / referente institucional.",
+      "Claudia: Asesora inmobiliaria / acompañamiento comercial.",
+      "Evitar frases como 'hablá con Claudia' como CTA principal de la empresa.",
+      "Usar CTAs del tipo 'Contactar al equipo' o 'Solicitar asesoramiento'.",
+      "Dejar placeholders de foto si aún no hay fotos aprobadas."
+    ],
+    "criterios_aceptacion": [
+      "Carina y Claudia aparecen de forma equilibrada.",
+      "La marca Quintana es la protagonista.",
+      "No se publican fotos personales sin confirmación.",
+      "El texto transmite equipo, respaldo y atención personalizada.",
+      "La sección es visible desde la home o menú."
+    ]
+  },
+  {
+    "id": "UX-001",
+    "titulo": "Reordenar navegación y CTAs principales",
+    "criticidad": "alta",
+    "esfuerzo": "bajo",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Hacer que el usuario encuentre rápido las acciones comerciales importantes.",
+    "contexto": "El sitio debe servir a compradores, pero sobre todo debe captar propietarios.",
+    "instrucciones": [
+      "Revisar menú actual.",
+      "Agregar entradas: Comprar, Alquilar, Tasación, Nosotros, Contacto.",
+      "El CTA principal del header debe ser 'Solicitar tasación'.",
+      "En mobile, el CTA debe ser visible y fácil de tocar.",
+      "El botón de WhatsApp debe mantenerse flotante.",
+      "En páginas de propiedad, agregar CTA: 'Consultar por esta propiedad'."
+    ],
+    "criterios_aceptacion": [
+      "Menú claro en desktop.",
+      "Menú claro en mobile.",
+      "Tasación tiene presencia prioritaria.",
+      "No hay más de un CTA principal compitiendo en el header.",
+      "WhatsApp funciona desde todas las páginas."
+    ]
+  },
+  {
+    "id": "ADMIN-005",
+    "titulo": "Agregar checklist comercial por propiedad en Admin",
+    "criticidad": "media",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Evitar publicar propiedades incompletas o poco profesionales.",
+    "contexto": "La calidad de publicación impacta en la confianza. Cada propiedad debe tener mínimos comerciales antes de publicarse.",
+    "instrucciones": [
+      "Agregar en Admin una columna o modal 'Calidad'.",
+      "Checklist: título claro, precio, barrio, metros, ambientes, descripción, mínimo 5 fotos, foto portada, WhatsApp activo.",
+      "Asignar score 0-100 por propiedad.",
+      "Marcar en rojo propiedades con score menor a 70.",
+      "Permitir filtrar por propiedades incompletas.",
+      "No bloquear publicación todavía; solo advertir."
+    ],
+    "criterios_aceptacion": [
+      "Cada propiedad muestra score de calidad.",
+      "Se identifican campos faltantes.",
+      "El admin puede filtrar incompletas.",
+      "No se rompe el flujo actual de publicación.",
+      "El score se recalcula al editar."
+    ]
+  },
+  {
+    "id": "DATA-002",
+    "titulo": "Crear histórico diario de propiedades",
+    "criticidad": "media",
+    "esfuerzo": "alto",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Empezar a construir una base histórica propia del mercado inmobiliario.",
+    "contexto": "A futuro, el activo más valioso puede ser el histórico: precios, barrios, metros, cambios y tiempo publicado.",
+    "instrucciones": [
+      "Crear base SQLite market_history.db o integrar en base existente.",
+      "Guardar snapshot diario de cada propiedad publicada por el sistema.",
+      "Campos mínimos: fecha, property_id, title, barrio, operación, tipo, precio, moneda, metros, ambientes, estado, url_origen.",
+      "Registrar cambios de precio si se detectan.",
+      "Crear script scripts/snapshot_market.py.",
+      "No mezclar todavía con scraping masivo externo; primero guardar lo propio."
+    ],
+    "criterios_aceptacion": [
+      "El snapshot se puede ejecutar manualmente.",
+      "No duplica filas dentro del mismo día para la misma propiedad.",
+      "Registra cambios de precio.",
+      "Existe documentación de cómo correrlo.",
+      "La base queda fuera de git si contiene datos operativos."
+    ]
+  },
+  {
+    "id": "QA-001",
+    "titulo": "Auditoría técnica básica antes de deploy",
+    "criticidad": "alta",
+    "esfuerzo": "bajo",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Evitar romper producción al aplicar cambios comerciales.",
+    "contexto": "El proyecto ya está en producción. Cada cambio debe probarse antes de deploy.",
+    "instrucciones": [
+      "Agregar script o documento docs/QA_CHECKLIST.md.",
+      "Checklist mínimo: npm install, npm run build, revisar consola, probar home, probar propiedad, probar admin, probar WhatsApp, probar /sitemap.xml, probar /robots.txt.",
+      "Agregar validación manual mobile.",
+      "Agregar nota: nunca subir .env ni claves.",
+      "Agregar paso de rollback simple."
+    ],
+    "criterios_aceptacion": [
+      "Existe docs/QA_CHECKLIST.md.",
+      "El checklist es ejecutable por una persona no técnica.",
+      "Incluye pruebas de conversión, no solo técnicas.",
+      "Incluye prueba de WhatsApp.",
+      "Incluye pasos de rollback."
+    ]
+  },
+  {
+    "id": "OBS-001",
+    "titulo": "Diseñar Observatorio Inmobiliario CABA - fase conceptual",
+    "criticidad": "baja",
+    "esfuerzo": "medio",
+    "impacto": "alto",
+    "estado": "pendiente",
+    "objetivo": "Definir el futuro módulo de inteligencia de mercado sin desarrollarlo todavía.",
+    "contexto": "El observatorio puede diferenciar a Quintana usando datos: precio por m², liquidez, tiempo de publicación y oportunidades por barrio.",
+    "instrucciones": [
+      "Crear docs/09_OBSERVATORIO.md.",
+      "Definir KPIs: precio por m², días publicado, cambios de precio, cantidad de propiedades por barrio, índice de liquidez.",
+      "Definir fuentes posibles de datos.",
+      "Definir restricciones legales y éticas de scraping.",
+      "Definir MVP con datos propios antes de datos externos.",
+      "No implementar scraping masivo en este ticket."
+    ],
+    "criterios_aceptacion": [
+      "Existe documento conceptual.",
+      "Define métricas concretas.",
+      "Diferencia datos propios de datos externos.",
+      "Incluye riesgos legales/técnicos.",
+      "Propone MVP realista."
+    ]
   }
 ]
