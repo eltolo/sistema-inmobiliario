@@ -1,0 +1,17 @@
+[Unit]
+Description=Quintana Inmobiliaria - Backend Web
+After=network.target
+
+[Service]
+Type=simple
+User=tato
+WorkingDirectory=/home/tato/sistema-inmobiliario/fichas/web-propiedades
+Environment=NODE_ENV=production
+Environment=SERVE_DIST=1
+Environment=PORT=3001
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
