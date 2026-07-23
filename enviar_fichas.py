@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 
-MCP_PATH = Path("D:\\Apps\\MCP_GMAIL")
+MCP_PATH = Path(os.getenv("MCP_GMAIL_PATH", "D:\\Apps\\MCP_GMAIL"))
 FICHAS_DIR = Path(__file__).parent / "fichas"
 
 TO_OK = "claudiadlf@gmail.com"

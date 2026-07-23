@@ -33,7 +33,7 @@ Sistema completo para gestión, publicación y promoción de propiedades inmobil
 
 ## Requisitos
 
-- Python 3.11+
+- Python 3.11+ (Linux) o 3.12+ (recomendado)
 - Node.js 20+
 - Cuentas/claves externas:
   - OpenAI API (clasificación de fotos y reescritura de textos)
@@ -45,6 +45,14 @@ Sistema completo para gestión, publicación y promoción de propiedades inmobil
 
 ### 1. Entorno Python
 
+#### Linux (Ubuntu/Debian)
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+#### Windows (PowerShell)
 ```powershell
 python -m venv .venv
 .\.venv\scripts\activate.ps1
@@ -53,6 +61,13 @@ pip install -r requirements.txt
 
 ### 2. Entorno Node.js
 
+#### Linux
+```bash
+cd fichas/web-propiedades
+npm install
+```
+
+#### Windows (PowerShell)
 ```powershell
 cd fichas\web-propiedades
 npm install
@@ -62,16 +77,49 @@ npm install
 
 Copiar `.env.example` a `.env` y completar las claves reales.
 
+#### Linux
+```bash
+cp .env.example .env
+```
+
+#### Windows
 ```powershell
 copy .env.example .env
 ```
 
 No subir `.env` a git; ya está protegido por `.gitignore`.
 
+### 4. Fuentes (Linux)
+
+Para los generadores de tarjetas (Instagram/Facebook), instalar fuentes TrueType:
+```bash
+sudo apt-get install fonts-dejavu-core fonts-liberation
+```
+
 ## Uso común
+
+### Scripts principales
+
+| Acción | Linux | Windows |
+|--------|-------|---------|
+| Menú interactivo | `bash menu.sh` | `menu.bat` |
+| Deploy a Hostinger | `bash deploy.sh` | `deploy.bat` |
+| Web en desarrollo | `bash levantar_web_desarrollo.sh` | `levantar_web_desarrollo.bat` |
+| Web + ngrok | `bash levantar_web_con_ngrok.sh` | `levantar_web_con_ngrok.bat` |
+| Web modo producción | `bash scripts/levantar_web_build_local.sh` | `scripts\levantar_web_build_local.bat` |
+| Scrapear propiedad | `bash scrapear_zonaprop_y_generar_fichas.bat` | `scrapear_zonaprop_y_generar_fichas.bat` |
+| Reescribir con IA | `bash reescribir_descripciones_con_ia.sh` | `reescribir_descripciones_con_ia.bat` |
+| Generar audios | `bash generar_audios_elevenlabs.sh` | `generar_audios_elevenlabs.bat` |
 
 ### Scrapear una propiedad
 
+#### Linux
+```bash
+source .venv/bin/activate
+python3 agente.py
+```
+
+#### Windows
 ```powershell
 .\.venv\scripts\activate.ps1
 python agente.py
@@ -79,6 +127,14 @@ python agente.py
 
 ### Sincronizar propiedades a la web
 
+#### Linux
+```bash
+source .venv/bin/activate
+cd fichas
+python3 update_web.py
+```
+
+#### Windows
 ```powershell
 .\.venv\scripts\activate.ps1
 cd fichas
@@ -87,8 +143,8 @@ python update_web.py
 
 ### Ejecutar el sitio en desarrollo
 
-```powershell
-cd fichas\web-propiedades
+```bash
+cd fichas/web-propiedades
 npm run dev
 ```
 
@@ -101,6 +157,16 @@ El sitio estará en `http://localhost:5173` y el admin en `http://localhost:5173
 
 ### Build y deploy a Hostinger
 
+#### Linux
+```bash
+cd fichas/web-propiedades
+npm run build
+cd ../..
+python3 scripts/zip_site.py
+python3 scripts/deploy_to_hostinger.py
+```
+
+#### Windows
 ```powershell
 cd fichas\web-propiedades
 npm run build

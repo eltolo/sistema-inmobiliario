@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const PYTHON = process.platform === 'win32' ? 'python' : 'python3';
 // En dev, fichas/ es el directorio padre de web-propiedades. En prod, fichas/ se despliega dentro de web-propiedades/.
 const FICHAS_DIR = (() => {
   const sibling = path.resolve(__dirname, '..');
@@ -91,12 +92,15 @@ function runScrapeJob(jobId, url) {
     updateJob(jobId, { status: 'running', stage: 'Scrapeando datos de Zonaprop...' });
 
     const safeUrl = url.replace(/'/g, "\\'");
+    const parentDir = path.join(BASE_DIR, '..').replace(/\\/g, '/');
+    const baseDirForward = BASE_DIR.replace(/\\/g, '/');
+    const logFile = path.join(BASE_DIR, 'admin.log').replace(/\\/g, '/');
     const script = `
 import sys, os, json, time
-sys.path.insert(0, r'${BASE_DIR.replace(/\\/g, '\\\\')}\\..')
-os.chdir(r'${BASE_DIR.replace(/\\/g, '\\\\')}\\..')
+sys.path.insert(0, '${parentDir}')
+os.chdir('${parentDir}')
 import logging
-logging.basicConfig(filename=r'${BASE_DIR.replace(/\\/g, '\\\\')}\\admin.log', level=logging.INFO, format='%(asctime)s %(message)s')
+logging.basicConfig(filename='${logFile}', level=logging.INFO, format='%(asctime)s %(message)s')
 from agente import procesar_propiedad, guardar_procesado
 try:
     print("STAGE:scrapeando")
@@ -118,7 +122,7 @@ except Exception as e:
     const tempScript = path.join(BASE_DIR, `_scrape_${jobId}.py`);
     fs.writeFileSync(tempScript, script, 'utf8');
 
-    const proc = spawn('python', [tempScript], {
+    const proc = spawn(PYTHON, [tempScript], {
       cwd: path.join(BASE_DIR, '..'),
     });
 
@@ -168,7 +172,7 @@ except Exception as e:
       // 5. Auto-run sync after scrape
       updateJob(jobId, { status: 'syncing', stage: 'Actualizando web con nuevos datos...' });
       const syncScript = path.join(BASE_DIR, 'update_web.py');
-      const syncProc = spawn('python', [syncScript], {
+      const syncProc = spawn(PYTHON, [syncScript], {
         cwd: path.join(BASE_DIR, '..'),
       });
 
@@ -231,6 +235,39 @@ app.post('/api/config', (req, res) => {
   }
 });
 
+// Guardar/actualizar leads de pre-tasación
+app.post('/api/tasacion-leads', (req, res) => {
+  const leadsDir = path.join(BASE_DIR, 'tasaciones');
+  const leadsPath = path.join(leadsDir, 'leads.json');
+  const now = new Date().toISOString();
+  const requestedId = typeof req.body.id === 'string' ? req.body.id : '';
+  const lead = {
+    ...req.body,
+    id: requestedId || crypto.randomBytes(6).toString('hex'),
+    createdAt: req.body.createdAt || now,
+    updatedAt: now,
+  };
+
+  if (!lead.name || !lead.phone || !lead.neighborhood || !lead.coveredArea) {
+    return res.status(400).json({ error: 'Faltan datos obligatorios' });
+  }
+
+  try {
+    fs.mkdirSync(leadsDir, { recursive: true });
+    const leads = fs.existsSync(leadsPath) ? JSON.parse(fs.readFileSync(leadsPath, 'utf8')) : [];
+    const existingIndex = leads.findIndex(item => item.id === lead.id);
+    if (existingIndex >= 0) {
+      leads[existingIndex] = { ...leads[existingIndex], ...lead, createdAt: leads[existingIndex].createdAt || lead.createdAt };
+    } else {
+      leads.unshift(lead);
+    }
+    fs.writeFileSync(leadsPath, JSON.stringify(leads, null, 2), 'utf8');
+    res.json({ message: 'Lead de tasación guardado', id: lead.id });
+  } catch (err) {
+    res.status(500).json({ error: 'No se pudo guardar el lead de tasación' });
+  }
+});
+
 // Cambiar estado de una propiedad
 app.post('/api/status', (req, res) => {
   const { id, status } = req.body;
@@ -247,7 +284,7 @@ app.post('/api/status', (req, res) => {
 
 // Actualizar datos de una propiedad
 app.post('/api/property/update', (req, res) => {
-  const { id, precio, expensas, tipo, ambientes, dormitorios, orientacion, antiguedad, metros_totales, metros_cubiertos, banos, luminoso } = req.body;
+  const { id, precio, expensas, tipo, operacion, ambientes, dormitorios, orientacion, antiguedad, metros_totales, metros_cubiertos, banos, luminoso } = req.body;
   if (!id) return res.status(400).json({ error: 'Falta id' });
 
   const rawPath = path.join(BASE_DIR, id, 'datos_raw.txt');
@@ -267,6 +304,7 @@ app.post('/api/property/update', (req, res) => {
     updateField('precio', precio);
     updateField('expensas', expensas);
     updateField('tipo', tipo);
+    updateField('operacion', operacion);
     updateField('ambientes', ambientes);
     updateField('dormitorios', dormitorios);
     updateField('orientacion', orientacion);
@@ -290,38 +328,63 @@ app.post('/api/property/update', (req, res) => {
   }
 });
 
-// Borrar propiedad (carpeta + procesados.txt + sync)
+// Borrar propiedad (carpeta fuente + copias publicadas)
 app.post('/api/property/delete', (req, res) => {
   const { id } = req.body;
   if (!id) return res.status(400).json({ error: 'Falta id' });
+  if (!/^[\w.\-]+$/.test(id)) return res.status(400).json({ error: 'ID de propiedad inválido' });
+
+  const removeInside = (root, ...parts) => {
+    const target = path.resolve(root, ...parts);
+    const safeRoot = path.resolve(root);
+    if (!target.startsWith(safeRoot + path.sep)) {
+      throw new Error(`Ruta insegura: ${target}`);
+    }
+    if (fs.existsSync(target)) {
+      fs.rmSync(target, { recursive: true, force: true });
+      return true;
+    }
+    return false;
+  };
 
   try {
-    // Eliminar carpeta
-    const propPath = path.join(BASE_DIR, id);
-    if (fs.existsSync(propPath)) {
-      fs.rmSync(propPath, { recursive: true, force: true });
-    }
+    const removed = [];
 
-    // Eliminar URL de procesados.txt
+    // Carpeta fuente: fichas/<id>
+    if (removeInside(BASE_DIR, id)) removed.push('fuente');
+
+    // Eliminar URL de procesados.txt para permitir rescrapearla
     const procesadosPath = path.join(BASE_DIR, '..', 'procesados.txt');
     if (fs.existsSync(procesadosPath)) {
       const lines = fs.readFileSync(procesadosPath, 'utf8').split('\n');
-      // Buscar la URL que contiene el nombre del folder
-      const folderSlug = id.replace(/_/g, '-').toLowerCase();
-      const filtered = lines.filter(l => {
-        const test = l.toLowerCase().replace(/[\s-_]/g, '');
-        return !test.includes(folderSlug.replace(/[\s-_]/g, ''));
-      });
+      const folderSlug = id.replace(/_/g, '-').toLowerCase().replace(/[\s_-]/g, '');
+      const filtered = lines.filter(l => !l.toLowerCase().replace(/[\s_-]/g, '').includes(folderSlug));
       fs.writeFileSync(procesadosPath, filtered.join('\n'), 'utf8');
     }
 
-    // Eliminar carpeta publica
-    const publicPath = path.join(BASE_DIR, 'web-propiedades', 'public', 'properties', id);
-    if (fs.existsSync(publicPath)) {
-      fs.rmSync(publicPath, { recursive: true, force: true });
+    // Copias públicas usadas en desarrollo y producción
+    const publicRoots = [
+      path.join(__dirname, 'public', 'properties'),
+      path.join(DIST_DIR, 'properties'),
+      path.join(BASE_DIR, 'web-propiedades', 'public', 'properties'),
+      path.join(BASE_DIR, 'web-propiedades', 'dist', 'properties'),
+    ];
+    for (const root of publicRoots) {
+      if (fs.existsSync(root) && removeInside(root, id)) removed.push(root);
     }
 
-    res.json({ message: `Propiedad ${id} eliminada` });
+    // Quitarla también del JSON fuente para que no vuelva a aparecer al recargar el admin/dev.
+    if (fs.existsSync(DATA_FILE)) {
+      const webData = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+      const before = Array.isArray(webData.properties) ? webData.properties.length : 0;
+      webData.properties = (webData.properties || []).filter(p => p.id !== id);
+      if (webData.properties.length !== before) {
+        fs.writeFileSync(DATA_FILE, JSON.stringify(webData, null, 2), 'utf8');
+        removed.push('properties.json');
+      }
+    }
+
+    res.json({ message: `Propiedad ${id} eliminada${removed.length ? ` (${removed.length} ubicación/es)` : ''}. Ejecutá Sincronizar Web y republicá para que desaparezca del portal público.` });
   } catch (err) {
     res.status(500).json({ error: 'Error al eliminar propiedad: ' + err.message });
   }
@@ -375,6 +438,59 @@ app.get('/api/instagram/:id', (req, res) => {
   } catch (err) {
     res.status(404).json({ error: 'Contenido de Instagram no encontrado. Sincronizá la web primero.' });
   }
+});
+
+// Obtener/generar paquete Facebook para una propiedad
+function facebookPackageInfo(id) {
+  const socialDir = path.join(BASE_DIR, id, 'social');
+  const textPath = path.join(socialDir, 'facebook_post', 'texto_facebook.txt');
+  const zipPath = path.join(socialDir, 'facebook_post.zip');
+  return {
+    textPath,
+    zipPath,
+    zipUrl: `/api/social/facebook/${encodeURIComponent(id)}/zip`,
+  };
+}
+
+app.get('/api/social/facebook/:id', (req, res) => {
+  const id = req.params.id;
+  const info = facebookPackageInfo(id);
+  if (!fs.existsSync(info.zipPath) || !fs.existsSync(info.textPath)) {
+    return res.status(404).json({ error: 'Paquete Facebook no generado todavía.' });
+  }
+  res.json({ id, zipUrl: info.zipUrl, text: fs.readFileSync(info.textPath, 'utf8') });
+});
+
+app.post('/api/social/facebook/:id/generate', (req, res) => {
+  const id = req.params.id;
+  const scriptPath = path.join(BASE_DIR, 'social_media_generator.py');
+  if (!fs.existsSync(scriptPath)) {
+    return res.status(500).json({ error: 'No se encontró social_media_generator.py' });
+  }
+  const proc = spawn(PYTHON, [scriptPath, id], { cwd: BASE_DIR });
+  let stdout = '';
+  let stderr = '';
+  proc.stdout.on('data', data => { stdout += data.toString(); });
+  proc.stderr.on('data', data => { stderr += data.toString(); });
+  proc.on('close', code => {
+    if (code !== 0) {
+      return res.status(500).json({ error: stderr || stdout || 'No se pudo generar el paquete Facebook' });
+    }
+    const info = facebookPackageInfo(id);
+    if (!fs.existsSync(info.zipPath) || !fs.existsSync(info.textPath)) {
+      return res.status(500).json({ error: 'El generador terminó pero no se encontró el ZIP.' });
+    }
+    res.json({ id, zipUrl: info.zipUrl, text: fs.readFileSync(info.textPath, 'utf8'), message: 'Paquete Facebook generado' });
+  });
+});
+
+app.get('/api/social/facebook/:id/zip', (req, res) => {
+  const id = req.params.id;
+  const info = facebookPackageInfo(id);
+  if (!fs.existsSync(info.zipPath)) {
+    return res.status(404).json({ error: 'ZIP Facebook no encontrado' });
+  }
+  res.download(info.zipPath, `${id}_facebook_post.zip`);
 });
 
 // Configuración de multer para subida de fotos (destino dinámico por propiedad)
@@ -558,7 +674,7 @@ app.post('/api/publish-instagram/:id', async (req, res) => {
 // Ejecutar sincronización (update_web.py)
 app.post('/api/sync', (req, res) => {
   const scriptPath = path.join(BASE_DIR, 'update_web.py');
-  exec(`python "${scriptPath}"`, (error, stdout, stderr) => {
+  exec(`${PYTHON} "${scriptPath}"`, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error}`);
       return res.status(500).json({ error: 'Error ejecutando sincronización', details: stderr });

@@ -4,9 +4,10 @@ import time
 from pathlib import Path
 from datetime import datetime
 
-base = Path(r'd:\Claudia_Inmobiliaria\Sistema_Inmobiliaria\fichas\web-propiedades')
-fichas_base = Path(r'd:\Claudia_Inmobiliaria\Sistema_Inmobiliaria\fichas')
-zip_path = Path(r'd:\Claudia_Inmobiliaria\Sistema_Inmobiliaria\site_express.zip')
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+base = PROJECT_ROOT / 'fichas' / 'web-propiedades'
+fichas_base = PROJECT_ROOT / 'fichas'
+zip_path = PROJECT_ROOT / 'site_express.zip'
 exclude = {'node_modules', '.git', '.vscode', 'src', 'scripts'}
 fichas_exclude = {'web-propiedades', 'node_modules', '.git', '.vscode', '__pycache__', '.trae'}
 RESERVED_NAMES = {'CON', 'PRN', 'AUX', 'NUL', 'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9', 'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 'LPT7', 'LPT8', 'LPT9'}

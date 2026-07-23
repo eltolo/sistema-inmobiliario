@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-LOCAL_ZIP = Path(r'D:\Claudia_Inmobiliaria\Sistema_Inmobiliaria\site_express.zip')
+LOCAL_ZIP = Path(__file__).resolve().parent.parent / 'site_express.zip'
 REMOTE_DIR = '/home/u896915843/domains/cabapropiedades.ar/nodejs'
 PUBLIC_HTML_DIR = '/home/u896915843/domains/cabapropiedades.ar/public_html'
 BACKUP_DIR = '/home/u896915843/backups'
