@@ -5,10 +5,10 @@ After=network.target
 [Service]
 Type=simple
 User=tato
-WorkingDirectory=/home/tato/sistema-inmobiliario/fichas/web-propiedades
+WorkingDirectory=/home/tato/proyectos/inmobiliaria/sistema-inmobiliario/fichas/web-propiedades
 Environment=NODE_ENV=production
 Environment=SERVE_DIST=1
-Environment=PORT=3001
+Environment=PORT=3002
 ExecStart=/usr/bin/node server.js
 Restart=always
 RestartSec=5
